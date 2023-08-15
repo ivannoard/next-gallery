@@ -1,1 +1,1 @@
-export { default as ProfileImage } from "./profile.png";
+export { default as ProfileImage } from "./new-photo-profile.jpg";

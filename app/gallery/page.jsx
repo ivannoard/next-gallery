@@ -12,10 +12,10 @@ const Gallery = () => {
                 <div className="pt-20">
                   <h1 className="tracking-[1rem]">GALLERY</h1>
                   <p className="text-white mt-3">
-                    &quot;In the silent sanctuary of the gallery, photographs
+                    &ldquo;In the silent sanctuary of the gallery, photographs
                     whisper the untold, frame by frame, a symphony of frozen
                     moments, revealing life&apos;s essence through the lens of
-                    perception&ldquo;
+                    perception&rdquo;
                   </p>
                 </div>
               </div>
