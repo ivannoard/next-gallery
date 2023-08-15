@@ -11,24 +11,12 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-  const [isShow, setIsShow] = React.useState(false);
-  React.useEffect(() => {
-    setTimeout(() => {
-      setIsShow(true);
-    }, 2000);
-  }, []);
   return (
     <>
       <html lang="en">
         <body className={inter.className}>
-          {!isShow ? (
-            <SplashScreen />
-          ) : (
-            <>
-              <Header />
-              {children}
-            </>
-          )}
+          <Header />
+          {children}
         </body>
       </html>
     </>
