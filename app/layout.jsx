@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 import { Header, SplashScreen } from "@/components/globals";
 import "./globals.css";
