@@ -28,7 +28,7 @@ const Header = () => {
             : "opacity-0"
         } fixed w-full top-0 transition-all z-[10]`}
       >
-        <div className="container bg-[#100b0a] mx-auto py-5 px-3 lg:px-10 flex justify-between items-center">
+        <div className="container bg-primary mx-auto py-5 px-3 lg:px-10 flex justify-between items-center">
           <Logo />
           <div className="relative lg:hidden">
             <CgMenuRight
@@ -37,13 +37,23 @@ const Header = () => {
               onClick={() => setIsToggleMenu(!isToggleMenu)}
             />
             <div
-              className={`bg-white w-full opacity-0 h-[150px] fixed top-[65px] z-[-10] right-0 left-0 mx-auto transition-all duration-1000  ${
+              className={`bg-[#2c2c2c] w-full opacity-0 py-5 fixed top-[63px] z-[-10] right-0 left-0 mx-auto transition-all duration-1000 text-center flex flex-col items-center justify-center gap-3  ${
                 isToggleMenu
                   ? "opacity-100 animate-swoosh_from_top_to_bottom"
                   : "opacity-0"
               }`}
             >
-              asd
+              {navMenu.map((item) => (
+                <div key={item.id} className="swipe-effect-item pb-2">
+                  <Link
+                    href={item.path}
+                    onClick={() => setIsToggleMenu(false)}
+                    className="text-white w-full block"
+                  >
+                    {item.name}
+                  </Link>
+                </div>
+              ))}
             </div>
           </div>
 

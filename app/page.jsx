@@ -150,7 +150,7 @@ export default function Home() {
                 {[1, 2, 3, 4].map((item) => (
                   <div
                     key={item}
-                    className="col-span-12 md:col-span-6 lg:col-span-6 h-[500px] bg-white text-black flex flex-col"
+                    className="col-span-12 md:col-span-6 lg:col-span-6 bg-white text-black flex flex-col"
                   >
                     <div className="relative w-full h-full">
                       <Image
