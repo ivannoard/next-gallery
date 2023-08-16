@@ -26,9 +26,9 @@ const Header = () => {
             : "opacity-0"
         } fixed w-full top-0 transition-all z-[10]`}
       >
-        <div className="container mx-auto py-5 px-10 flex justify-between items-center">
+        <div className="container mx-auto py-5 px-3 lg:px-10 flex justify-between items-center">
           <Logo />
-          <div className="flex gap-5 items-center">
+          <div className="hidden lg:flex gap-5 items-center">
             {navMenu.map((item) => (
               <div key={item.id} className="swipe-effect-item">
                 <Link href={item.path} className="text-white">

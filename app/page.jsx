@@ -40,69 +40,86 @@ export default function Home() {
             <div className="absolute w-full h-full bg-black bg-opacity-30 top-0 left-0 right-0 bottom-o mx-auto">
               <div className=" h-full flex items-center justify-center z-[1]">
                 <div className="text-center">
-                  <p className="text-xl tracking-[1rem]">- GALLERY -</p>
-                  <h1 className="text-6xl my-5">{activeDisplay}</h1>
-                  <p className="tracking-widest">
+                  <p className="text-lg lg:text-xl tracking-[1rem]">
+                    - GALLERY -
+                  </p>
+                  <h1 className="text-3xl lg:text-6xl my-5">{activeDisplay}</h1>
+                  <p className="text-xs lg:text-lg tracking-widest">
                     Photographed Using Fujica AF Flash Date
                   </p>
                 </div>
               </div>
             </div>
           </section>
-          <section className="mt-10 px-10 text-white">
+          <section className="mt-10 px-3 lg:px-10 text-white">
             <div className="container mx-auto">
               <h4 className="text-center tracking-[.5rem]">
                 - Explore Places -
               </h4>
-              <div className="button-places w-1/2 mx-auto mt-5 flex gap-5 justify-center">
-                <a href="#" className="p-5 swipe-effect-item">
+              <div className="button-places w-full lg:w-1/2 mx-auto mt-5 flex flex-wrap lg:flex-nowrap gap-5 justify-center">
+                <a
+                  href="#"
+                  className="px-6 py-2 rounded-full lg:rounded-none lg:p-5 swipe-effect-item border border-white lg:border-none"
+                >
                   All
                 </a>
-                <a href="#" className="p-5 swipe-effect-item">
+                <a
+                  href="#"
+                  className="px-6 py-2 rounded-full lg:rounded-none lg:p-5 swipe-effect-item border border-white lg:border-none"
+                >
                   Djakarta
                 </a>
-                <a href="#" className="p-5 swipe-effect-item">
+                <a
+                  href="#"
+                  className="px-6 py-2 rounded-full lg:rounded-none lg:p-5 swipe-effect-item border border-white lg:border-none"
+                >
                   Semarang
                 </a>
-                <a href="#" className="p-5 swipe-effect-item">
+                <a
+                  href="#"
+                  className="px-6 py-2 rounded-full lg:rounded-none lg:p-5 swipe-effect-item border border-white lg:border-none"
+                >
                   Batang
                 </a>
-                <a href="#" className="p-5 swipe-effect-item">
+                <a
+                  href="#"
+                  className="px-6 py-2 rounded-full lg:rounded-none lg:p-5 swipe-effect-item border border-white lg:border-none"
+                >
                   Yogyakarta
                 </a>
               </div>
-              <div className="grid grid-cols-12 gap-5 mt-5">
-                <div className="col-span-4 h-[500px] bg-white text-black relative">
+              <div className="grid grid-cols-12 gap-3 lg:gap-5 mt-5">
+                <div className="col-span-12 lg:col-span-4 h-[500px] bg-white text-black relative">
                   <div className="absolute bottom-0 left-0 right-0 p-5 bg-blue-500 text-center">
                     <h4 className="tracking-[.4rem]">Djakarta</h4>
                     <p className="text-sm">15 photos</p>
                   </div>
                 </div>
-                <div className="col-span-4 h-[500px] bg-white text-black relative">
+                <div className="col-span-12 lg:col-span-4 h-[500px] bg-white text-black relative">
                   <div className="absolute bottom-0 left-0 right-0 p-5 bg-blue-500 text-center">
                     <h4 className="tracking-[.4rem]">Semarang</h4>
                     <p className="text-sm">15 photos</p>
                   </div>
                 </div>
-                <div className="col-span-4 h-[500px] bg-white text-black relative">
+                <div className="col-span-12 lg:col-span-4 h-[500px] bg-white text-black relative">
                   <div className="absolute bottom-0 left-0 right-0 p-5 bg-blue-500 text-center">
                     <h4 className="tracking-[.4rem]">Batang</h4>
                     <p className="text-sm">15 photos</p>
                   </div>
                 </div>
-                <div className="col-span-4 h-[500px] bg-white text-black relative">
+                <div className="col-span-12 lg:col-span-4 h-[500px] bg-white text-black relative">
                   <div className="absolute bottom-0 left-0 right-0 p-5 bg-blue-500 text-center">
                     <h4 className="tracking-[.4rem]">Djakarta</h4>
                     <p className="text-sm">15 photos</p>
                   </div>
                 </div>
-                <div className="col-span-4 h-[500px] bg-white text-black relative">
+                <div className="col-span-12 lg:col-span-4 h-[500px] bg-white text-black relative">
                   <div className="absolute bottom-0 left-0 right-0 p-5 bg-blue-500 text-center">
                     <h4 className="tracking-[.4rem]">Semarang</h4>
                     <p className="text-sm">15 photos</p>
                   </div>
                 </div>
-                <div className="col-span-4 h-[500px] bg-white text-black relative">
+                <div className="col-span-12 lg:col-span-4 h-[500px] bg-white text-black relative">
                   <div className="absolute bottom-0 left-0 right-0 p-5 bg-blue-500 text-center">
                     <h4 className="tracking-[.4rem]">Batang</h4>
                     <p className="text-sm">15 photos</p>
@@ -111,31 +128,40 @@ export default function Home() {
               </div>
             </div>
           </section>
-          <section className="mt-16 px-10 text-white">
+          <section className="mt-16 px-3 lg:px-10 text-white">
             <div className="container mx-auto">
               <div className="text-center">
                 <h4 className="text-center tracking-[.5rem]">- My Blogs -</h4>
                 <h1 className="tracking-widest my-5">Read My Life Stories</h1>
               </div>
-              <div className="button-blogs w-1/2 mx-auto mt-5 flex gap-5 justify-center">
-                <a href="#" className="p-5 swipe-effect-item">
+              <div className="button-blogs w-full lg:w-1/2 mx-auto mt-5 flex flex-wrap lg:flex-nowrap gap-3 lg:gap-5 justify-center">
+                <a
+                  href="#"
+                  className="px-6 py-2 rounded-full lg:rounded-none lg:p-5 swipe-effect-item border border-white lg:border-none"
+                >
                   All
                 </a>
-                <a href="#" className="p-5 swipe-effect-item">
+                <a
+                  href="#"
+                  className="px-6 py-2 rounded-full lg:rounded-none lg:p-5 swipe-effect-item border border-white lg:border-none"
+                >
                   Travel
                 </a>
-                <a href="#" className="p-5 swipe-effect-item">
-                  Stuff
+                <a
+                  href="#"
+                  className="px-6 py-2 rounded-full lg:rounded-none lg:p-5 swipe-effect-item border border-white lg:border-none"
+                >
+                  Blog
                 </a>
-                <a href="#" className="p-5 swipe-effect-item">
+                <a
+                  href="#"
+                  className="px-6 py-2 rounded-full lg:rounded-none lg:p-5 swipe-effect-item border border-white lg:border-none"
+                >
                   Programming
                 </a>
-                <a href="#" className="p-5 swipe-effect-item">
-                  Uncategorised
-                </a>
               </div>
-              <div className="grid grid-cols-12 gap-5 px-40 mt-5">
-                <div className="col-span-6 h-[500px] bg-white text-black relative">
+              <div className="grid grid-cols-12 gap-5 px-3 lg:px-40 mt-5">
+                <div className="col-span-12 lg:col-span-6 h-[500px] bg-white text-black relative">
                   <div className="absolute bottom-0 left-0 right-0 p-5 bg-[#1d1615] text-white">
                     <div className="blog-title">
                       <p className="text-xs mb-2 text-[#A49F9E]">
@@ -150,7 +176,7 @@ export default function Home() {
                     </p>
                   </div>
                 </div>
-                <div className="col-span-6 h-[500px] bg-white text-black relative">
+                <div className="col-span-12 lg:col-span-6 h-[500px] bg-white text-black relative">
                   <div className="absolute bottom-0 left-0 right-0 p-5 bg-[#1d1615] text-white">
                     <div className="blog-title">
                       <p className="text-xs mb-2 text-[#A49F9E]">
@@ -165,7 +191,7 @@ export default function Home() {
                     </p>
                   </div>
                 </div>
-                <div className="col-span-6 h-[500px] bg-white text-black relative">
+                <div className="col-span-12 lg:col-span-6 h-[500px] bg-white text-black relative">
                   <div className="absolute bottom-0 left-0 right-0 p-5 bg-[#1d1615] text-white">
                     <div className="blog-title">
                       <p className="text-xs mb-2 text-[#A49F9E]">
@@ -180,7 +206,7 @@ export default function Home() {
                     </p>
                   </div>
                 </div>
-                <div className="col-span-6 h-[500px] bg-white text-black relative">
+                <div className="col-span-12 lg:col-span-6 h-[500px] bg-white text-black relative">
                   <div className="absolute bottom-0 left-0 right-0 p-5 bg-[#1d1615] text-white">
                     <div className="blog-title">
                       <p className="text-xs mb-2 text-[#A49F9E]">

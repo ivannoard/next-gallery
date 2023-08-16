@@ -32,7 +32,7 @@ const Blog = () => {
               <p className="mt-2">Ralph Waldo Emerson</p>
             </div>
             <div className="grid grid-cols-12 gap-5">
-              <div className="col-span-7">
+              <div className="col-span-12 lg:col-span-7">
                 <div className="mb-5 bg-[#1d1615]">
                   <div className="bg-white w-full h-[400px]">asd</div>
                   <div className="px-5 py-3">
@@ -62,7 +62,7 @@ const Blog = () => {
                   </div>
                 </div>
               </div>
-              <div className="col-span-5 flex flex-col gap-5">
+              <div className="col-span-12 lg:col-span-5 flex flex-col gap-5">
                 <div className="bg-[#1d1615]">
                   <div className="bg-white w-full h-[200px]">asd</div>
                   <div className="px-5 py-3">
@@ -102,28 +102,24 @@ const Blog = () => {
               </div>
             </div>
             <div className="grid grid-cols-12 gap-5 mt-10">
-              <div className="col-span-8 flex flex-col gap-5">
+              <div className="col-span-12 lg:col-span-8 flex flex-col gap-5">
                 {[1, 2, 3, 4, 5, 6].map((item) => (
-                  <div key={item} className="bg-white w-full">
+                  <div key={item} className="bg-white w-full text-black">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Vitae sint placeat natus ex ipsa necessitatibus aliquid
-                    expedita perferendis facere at autem, harum, excepturi
-                    provident beatae dolorum possimus sequi, rerum voluptate
-                    modi inventore omnis tempora nesciunt molestias voluptatem?
-                    Omnis optio debitis praesentium aliquid corrupti? Deserunt
-                    nostrum adipisci expedita odio minus fugit?
+                    expedita perferendis facere at autem, harum
                   </div>
                 ))}
               </div>
-              <div className="col-span-4">
-                <div className="bg-[#1d1615] w-full relative min-h-[200px]">
+              <div className="col-span-12 order-first lg:order-last lg:col-span-4">
+                <div className="bg-[#1d1615] w-full relative lg:min-h-[200px]">
                   <div
                     className={`sticky top-0 transition-all duration-1000 ${
-                      scrollPosition >= 1406 ? "pt-[127px]" : "pt-5"
+                      scrollPosition >= 1406 ? "lg:pt-[127px]" : "lg:pt-5"
                     } p-5`}
                   >
                     <div className="border-b-2 border-white pb-3 flex items-center gap-5">
-                      <div className="w-[100px] h-[100px] rounded-full bg-white overflow-hidden">
+                      <div className="w-[60px] h-[60px] lg:w-[100px] lg:h-[100px] rounded-full bg-white overflow-hidden">
                         <Image
                           alt="profile-image"
                           width="100"
@@ -133,11 +129,13 @@ const Blog = () => {
                         />
                       </div>
                       <div className="text-white">
-                        <h2>Ivan Ardiansyah</h2>
-                        <p>Author</p>
+                        <h2 className="text-sm lg:text-[1.5em]">
+                          Ivan Ardiansyah
+                        </h2>
+                        <p className="text-sm lg:text-base">Author</p>
                       </div>
                     </div>
-                    <div className="mt-3 text-white">
+                    <div className="hidden lg:block mt-3 text-white">
                       <p>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit.
                         Maiores quam ducimus magnam? Commodi corrupti suscipit

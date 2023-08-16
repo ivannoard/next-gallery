@@ -4,12 +4,12 @@ import React from "react";
 const Gallery = () => {
   return (
     <>
-      <main className="h-[2000px]">
+      <main>
         <section className="bg-red-500 w-full h-[600px] px-5">
           <div className="container mx-auto h-full">
-            <div className="grid grid-cols-12 py-24 h-full gap-10">
-              <div className="col-span-6 h-full">
-                <div className="pt-20">
+            <div className="grid grid-cols-12 pt-24 lg:py-24 lg:h-full lg:gap-10">
+              <div className="col-span-12 lg:col-span-6 h-full">
+                <div className="lg:pt-20">
                   <h1 className="tracking-[1rem]">GALLERY</h1>
                   <p className="text-white mt-3">
                     &ldquo;In the silent sanctuary of the gallery, photographs
@@ -19,29 +19,33 @@ const Gallery = () => {
                   </p>
                 </div>
               </div>
-              <div className="col-span-6 flex gap-5 overflow-x-scroll ">
-                <div className="card bg-white w-[300px] flex-none h-full">
-                  asd
-                </div>
-                <div className="card bg-white w-[300px] flex-none h-full">
-                  asd
-                </div>
-                <div className="card bg-white w-[300px] flex-none h-full">
-                  asd
-                </div>
-                <div className="card bg-white w-[300px] flex-none h-full">
-                  asd
+              <div className="col-span-12 lg:col-span-6 relative lg:overflow-x-scroll">
+                <div className="mt-5 lg:mt-0 lg:px-0 lg:py-0 absolute z-[2] w-full top-0 lg:h-full flex gap-5 overflow-x-scroll lg:overflow-x-visible">
+                  <div className="card bg-white w-[200px] h-[350px] flex-none lg:w-[300px] lg:h-full">
+                    asd
+                  </div>
+                  <div className="card bg-white w-[200px] h-[350px] flex-none lg:w-[300px] lg:h-full">
+                    asd
+                  </div>
+                  <div className="card bg-white w-[200px] h-[350px] flex-none lg:w-[300px] lg:h-full">
+                    asd
+                  </div>
+                  <div className="card bg-white w-[200px] h-[350px] flex-none lg:w-[300px] lg:h-full">
+                    asd
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </section>
-        <section className="text-white mt-16 px-10">
+        <section className="text-white mt-24 lg:mt-16 px-3 lg:px-10">
           <div className="container mx-auto">
             <h4 className="text-center tracking-[.5rem]">
-              - Unveiling Imagination&apos;s Horizons -
+              <span className="hidden lg:inline">- </span>Unveiling
+              Imagination&apos;s Horizons
+              <span className="hidden lg:inline"> -</span>
             </h4>
-            <div class="gap-8 columns-4 mt-10">
+            <div class="gap-5 lg:gap-8 columns-2 lg:columns-4 mt-10">
               <div className="relative">
                 <div className="absolute bg-black bg-opacity-0 hover:bg-opacity-70 transition w-full h-full top-0 bottom-0 left-0 right-0 mx-auto"></div>
                 <Image

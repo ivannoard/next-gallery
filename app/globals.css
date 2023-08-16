@@ -32,7 +32,7 @@ h6 {
 }
 
 .swipe-effect-item {
-  padding: 8px 8px;
+  padding: none;
   position: relative;
   transition: all 0.5s;
   overflow: hidden;
@@ -51,4 +51,10 @@ h6 {
 .swipe-effect-item:hover::before {
   background-color: #e09b53;
   transform: translateX(0);
+}
+
+@media only screen and (min-width: 1280px) {
+  .swipe-effect-item {
+    padding: 8px;
+  }
 }
