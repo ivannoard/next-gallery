@@ -7,6 +7,12 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        primary: "#101010",
+        secondary: "#202020",
+        muted: "#A49F9E",
+        highlight: "#f1830d",
+      },
       aspectRatio: {
         vertical: "9/16",
         "vertical-sm": "4/3",

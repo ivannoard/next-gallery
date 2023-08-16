@@ -29,17 +29,17 @@ const Blog = () => {
                 useful, to be honorable, to be compassionate, to have it make
                 some difference that you have lived and lived well.&rdquo;
               </h2>
-              <p className="mt-2">Ralph Waldo Emerson</p>
+              <p className="mt-2 text-muted">Ralph Waldo Emerson</p>
             </div>
             <div className="grid grid-cols-12 gap-5">
-              <div className="col-span-12 lg:col-span-7">
-                <div className="mb-5 bg-[#1d1615]">
+              <div className="col-span-12 md:col-span-6 lg:col-span-7">
+                <div className="mb-5 bg-secondary">
                   <div className="bg-white w-full h-[400px]">asd</div>
                   <div className="px-5 py-3">
                     <h2 className="text-white mt-5">
                       Lorem ipsum dolor sit amet.
                     </h2>
-                    <p className="text-white">
+                    <p className="text-muted">
                       Lorem ipsum dolor sit amet consectetur adipisicing elit.
                       Facilis quia iusto, esse dignissimos repellat repudiandae
                       perspiciatis quas et accusantium corrupti optio quam
@@ -47,13 +47,13 @@ const Blog = () => {
                     </p>
                   </div>
                 </div>
-                <div className="bg-[#1d1615]">
+                <div className="bg-secondary">
                   <div className="bg-white w-full h-[400px]">asd</div>
                   <div className="px-5 py-3">
                     <h2 className="text-white mt-5">
                       Lorem ipsum dolor sit amet.
                     </h2>
-                    <p className="text-white">
+                    <p className="text-muted">
                       Lorem ipsum dolor sit amet consectetur adipisicing elit.
                       Facilis quia iusto, esse dignissimos repellat repudiandae
                       perspiciatis quas et accusantium corrupti optio quam
@@ -62,38 +62,38 @@ const Blog = () => {
                   </div>
                 </div>
               </div>
-              <div className="col-span-12 lg:col-span-5 flex flex-col gap-5">
-                <div className="bg-[#1d1615]">
+              <div className="col-span-12 md:col-span-6 lg:col-span-5 flex flex-col gap-5">
+                <div className="bg-secondary">
                   <div className="bg-white w-full h-[200px]">asd</div>
                   <div className="px-5 py-3">
                     <h2 className="text-white mt-5">
                       Lorem ipsum dolor sit amet.
                     </h2>
-                    <p className="text-white">
+                    <p className="text-muted">
                       Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                       Eum soluta cupiditate dolor ratione placeat a beatae.
                     </p>
                   </div>
                 </div>
-                <div className="bg-[#1d1615]">
+                <div className="bg-secondary">
                   <div className="bg-white w-full h-[200px]">asd</div>
                   <div className="px-5 py-3">
                     <h2 className="text-white mt-5">
                       Lorem ipsum dolor sit amet.
                     </h2>
-                    <p className="text-white">
+                    <p className="text-muted">
                       Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                       Eum soluta cupiditate dolor ratione placeat a beatae.
                     </p>
                   </div>
                 </div>
-                <div className="bg-[#1d1615]">
+                <div className="bg-secondary">
                   <div className="bg-white w-full h-[200px]">asd</div>
                   <div className="px-5 py-3">
                     <h2 className="text-white mt-5">
                       Lorem ipsum dolor sit amet.
                     </h2>
-                    <p className="text-white">
+                    <p className="text-muted">
                       Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                       Eum soluta cupiditate dolor ratione placeat a beatae.
                     </p>
@@ -112,7 +112,7 @@ const Blog = () => {
                 ))}
               </div>
               <div className="col-span-12 order-first lg:order-last lg:col-span-4">
-                <div className="bg-[#1d1615] w-full relative lg:min-h-[200px]">
+                <div className="bg-secondary w-full relative lg:min-h-[200px]">
                   <div
                     className={`sticky top-0 transition-all duration-1000 ${
                       scrollPosition >= 1406 ? "lg:pt-[127px]" : "lg:pt-5"
@@ -132,11 +132,13 @@ const Blog = () => {
                         <h2 className="text-sm lg:text-[1.5em]">
                           Ivan Ardiansyah
                         </h2>
-                        <p className="text-sm lg:text-base">Author</p>
+                        <p className="text-sm lg:text-base text-muted">
+                          Author
+                        </p>
                       </div>
                     </div>
                     <div className="hidden lg:block mt-3 text-white">
-                      <p>
+                      <p className="text-muted">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit.
                         Maiores quam ducimus magnam? Commodi corrupti suscipit
                         eveniet ducimus laudantium fugit, aliquid, debitis animi
