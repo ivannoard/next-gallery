@@ -3,9 +3,11 @@ import React from "react";
 import { Logo } from "../atoms";
 import { navMenu } from "@/models/navmenu";
 import Link from "next/link";
+import { CgMenuRight } from "react-icons/cg";
 
 const Header = () => {
   const [scrollPosition, setScrollPosition] = React.useState(0);
+  const [isToggleMenu, setIsToggleMenu] = React.useState(false);
   const handleScroll = () => {
     const position = window.pageYOffset;
     setScrollPosition(position);
@@ -26,8 +28,25 @@ const Header = () => {
             : "opacity-0"
         } fixed w-full top-0 transition-all z-[10]`}
       >
-        <div className="container mx-auto py-5 px-3 lg:px-10 flex justify-between items-center">
+        <div className="container bg-[#100b0a] mx-auto py-5 px-3 lg:px-10 flex justify-between items-center">
           <Logo />
+          <div className="relative lg:hidden">
+            <CgMenuRight
+              className="text-white cursor-pointer"
+              size={24}
+              onClick={() => setIsToggleMenu(!isToggleMenu)}
+            />
+            <div
+              className={`bg-white w-full opacity-0 h-[150px] fixed top-[65px] z-[-10] right-0 left-0 mx-auto transition-all duration-1000  ${
+                isToggleMenu
+                  ? "opacity-100 animate-swoosh_from_top_to_bottom"
+                  : "opacity-0"
+              }`}
+            >
+              asd
+            </div>
+          </div>
+
           <div className="hidden lg:flex gap-5 items-center">
             {navMenu.map((item) => (
               <div key={item.id} className="swipe-effect-item">
