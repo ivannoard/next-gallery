@@ -89,42 +89,28 @@ export default function Home() {
                 </a>
               </div>
               <div className="grid grid-cols-12 gap-3 lg:gap-5 mt-5">
-                <div className="col-span-12 md:col-span-6 lg:col-span-4 h-[500px] bg-white text-black relative">
-                  <div className="absolute bottom-0 left-0 right-0 p-5 bg-blue-500 text-center">
-                    <h4 className="tracking-[.4rem]">Djakarta</h4>
-                    <p className="text-sm">15 photos</p>
+                {[1, 2, 3, 4, 5, 6].map((item) => (
+                  <div
+                    key={item}
+                    className="col-span-12 md:col-span-6 lg:col-span-4 h-[500px] bg-white text-black flex flex-col"
+                  >
+                    <div className="relative w-full h-full">
+                      <Image
+                        alt="image-gallery"
+                        width="500"
+                        height="500"
+                        objectFit="cover"
+                        class="w-full h-full mb-6"
+                        src={`https://picsum.photos/500/300?random=${item}`}
+                      />
+                      <div className="absolute bg-black bg-opacity-0 hover:bg-opacity-70 transition w-full h-full top-0 bottom-0 left-0 right-0 mx-auto"></div>
+                    </div>
+                    <div className="p-5 bg-secondary text-center">
+                      <h4 className="tracking-[.4rem] text-white">DJAKARTA</h4>
+                      <p className="text-sm text-highlight mt-3">15 photos</p>
+                    </div>
                   </div>
-                </div>
-                <div className="col-span-12 md:col-span-6 lg:col-span-4 h-[500px] bg-white text-black relative">
-                  <div className="absolute bottom-0 left-0 right-0 p-5 bg-blue-500 text-center">
-                    <h4 className="tracking-[.4rem]">Semarang</h4>
-                    <p className="text-sm">15 photos</p>
-                  </div>
-                </div>
-                <div className="col-span-12 md:col-span-6 lg:col-span-4 h-[500px] bg-white text-black relative">
-                  <div className="absolute bottom-0 left-0 right-0 p-5 bg-blue-500 text-center">
-                    <h4 className="tracking-[.4rem]">Batang</h4>
-                    <p className="text-sm">15 photos</p>
-                  </div>
-                </div>
-                <div className="col-span-12 md:col-span-6 lg:col-span-4 h-[500px] bg-white text-black relative">
-                  <div className="absolute bottom-0 left-0 right-0 p-5 bg-blue-500 text-center">
-                    <h4 className="tracking-[.4rem]">Djakarta</h4>
-                    <p className="text-sm">15 photos</p>
-                  </div>
-                </div>
-                <div className="col-span-12 md:col-span-6 lg:col-span-4 h-[500px] bg-white text-black relative">
-                  <div className="absolute bottom-0 left-0 right-0 p-5 bg-blue-500 text-center">
-                    <h4 className="tracking-[.4rem]">Semarang</h4>
-                    <p className="text-sm">15 photos</p>
-                  </div>
-                </div>
-                <div className="col-span-12 md:col-span-6 lg:col-span-4 h-[500px] bg-white text-black relative">
-                  <div className="absolute bottom-0 left-0 right-0 p-5 bg-blue-500 text-center">
-                    <h4 className="tracking-[.4rem]">Batang</h4>
-                    <p className="text-sm">15 photos</p>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
           </section>
@@ -161,78 +147,40 @@ export default function Home() {
                 </a>
               </div>
               <div className="grid grid-cols-12 gap-5 px-3 lg:px-40 mt-5">
-                <div className="col-span-12 md:col-span-6 lg:col-span-6 h-[500px] bg-white text-black relative">
-                  <div className="absolute bottom-0 left-0 right-0 p-5 bg-secondary text-white">
-                    <div className="blog-title">
-                      <p className="text-xs mb-2 text-muted">
-                        <span className="text-highlight font-semibold">
-                          TRAVEL
-                        </span>{" "}
-                        - AUGUST 2023
+                {[1, 2, 3, 4].map((item) => (
+                  <div
+                    key={item}
+                    className="col-span-12 md:col-span-6 lg:col-span-6 h-[500px] bg-white text-black flex flex-col"
+                  >
+                    <div className="relative w-full h-full">
+                      <Image
+                        alt="image-gallery"
+                        width="500"
+                        height="500"
+                        objectFit="cover"
+                        class="w-full h-full mb-6"
+                        src={`https://picsum.photos/500/300?random=${item}`}
+                      />
+                      <div className="absolute bg-black bg-opacity-0 hover:bg-opacity-70 transition w-full h-full top-0 bottom-0 left-0 right-0 mx-auto"></div>
+                    </div>
+                    <div className=" p-5 bg-secondary text-white">
+                      <div className="blog-title">
+                        <p className="text-xs mb-2 text-muted">
+                          <span className="text-highlight font-semibold">
+                            TRAVEL
+                          </span>{" "}
+                          - AUGUST 2023
+                        </p>
+                      </div>
+                      <h3 className="mb-2">Djakarta Stories</h3>
+                      <p className="text-muted">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing
+                        elit. Quis neque sit fugiat, soluta repudiandae quasi
+                        esse facilis nostrum animi voluptate?
                       </p>
                     </div>
-                    <h3 className="mb-2">Djakarta Stories</h3>
-                    <p className="text-muted">
-                      Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                      Quis neque sit fugiat, soluta repudiandae quasi esse
-                      facilis nostrum animi voluptate?
-                    </p>
                   </div>
-                </div>
-                <div className="col-span-12 md:col-span-6 lg:col-span-6 h-[500px] bg-white text-black relative">
-                  <div className="absolute bottom-0 left-0 right-0 p-5 bg-secondary text-white">
-                    <div className="blog-title">
-                      <p className="text-xs mb-2 text-muted">
-                        <span className="text-highlight font-semibold">
-                          TRAVEL
-                        </span>{" "}
-                        - AUGUST 2023
-                      </p>
-                    </div>
-                    <h3 className="mb-2">Djakarta Stories</h3>
-                    <p className="text-muted">
-                      Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                      Quis neque sit fugiat, soluta repudiandae quasi esse
-                      facilis nostrum animi voluptate?
-                    </p>
-                  </div>
-                </div>
-                <div className="col-span-12 md:col-span-6 lg:col-span-6 h-[500px] bg-white text-black relative">
-                  <div className="absolute bottom-0 left-0 right-0 p-5 bg-secondary text-white">
-                    <div className="blog-title">
-                      <p className="text-xs mb-2 text-muted">
-                        <span className="text-highlight font-semibold">
-                          TRAVEL
-                        </span>{" "}
-                        - AUGUST 2023
-                      </p>
-                    </div>
-                    <h3 className="mb-2">Djakarta Stories</h3>
-                    <p className="text-muted">
-                      Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                      Quis neque sit fugiat, soluta repudiandae quasi esse
-                      facilis nostrum animi voluptate?
-                    </p>
-                  </div>
-                </div>
-                <div className="col-span-12 md:col-span-6 lg:col-span-6 h-[500px] bg-white text-black relative">
-                  <div className="absolute bottom-0 left-0 right-0 p-5 bg-secondary text-white">
-                    <div className="blog-title">
-                      <p className="text-xs mb-2 text-muted">
-                        <span className="text-highlight font-semibold">
-                          TRAVEL
-                        </span>{" "}
-                        - AUGUST 2023
-                      </p>
-                    </div>
-                    <h3 className="mb-2">Djakarta Stories</h3>
-                    <p className="text-muted">
-                      Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                      Quis neque sit fugiat, soluta repudiandae quasi esse
-                      facilis nostrum animi voluptate?
-                    </p>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
           </section>

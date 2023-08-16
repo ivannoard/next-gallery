@@ -34,11 +34,29 @@ const Blog = () => {
             <div className="grid grid-cols-12 gap-5">
               <div className="col-span-12 md:col-span-6 lg:col-span-7">
                 <div className="mb-5 bg-secondary">
-                  <div className="bg-white w-full h-[400px]">asd</div>
+                  <div className="w-full h-[400px]">
+                    <div className="relative w-full h-full">
+                      <Image
+                        alt="image-gallery"
+                        width="500"
+                        height="500"
+                        objectFit="cover"
+                        class="w-full h-full mb-6"
+                        src={`https://picsum.photos/500/300?random=1`}
+                      />
+                      <div className="absolute bg-black bg-opacity-0 hover:bg-opacity-70 transition w-full h-full top-0 bottom-0 left-0 right-0 mx-auto"></div>
+                    </div>
+                  </div>
                   <div className="px-5 py-3">
-                    <h2 className="text-white mt-5">
-                      Lorem ipsum dolor sit amet.
-                    </h2>
+                    <div className="blog-title pt-3">
+                      <p className="text-xs mb-2 text-muted">
+                        <span className="text-highlight font-semibold">
+                          TRAVEL
+                        </span>{" "}
+                        - AUGUST 2023
+                      </p>
+                      <h2>Lorem ipsum dolor sit amet.</h2>
+                    </div>
                     <p className="text-muted">
                       Lorem ipsum dolor sit amet consectetur adipisicing elit.
                       Facilis quia iusto, esse dignissimos repellat repudiandae
@@ -48,11 +66,29 @@ const Blog = () => {
                   </div>
                 </div>
                 <div className="bg-secondary">
-                  <div className="bg-white w-full h-[400px]">asd</div>
+                  <div className="w-full h-[400px]">
+                    <div className="relative w-full h-full">
+                      <Image
+                        alt="image-gallery"
+                        width="500"
+                        height="500"
+                        objectFit="cover"
+                        class="w-full h-full mb-6"
+                        src={`https://picsum.photos/500/300?random=5`}
+                      />
+                      <div className="absolute bg-black bg-opacity-0 hover:bg-opacity-70 transition w-full h-full top-0 bottom-0 left-0 right-0 mx-auto"></div>
+                    </div>
+                  </div>
                   <div className="px-5 py-3">
-                    <h2 className="text-white mt-5">
-                      Lorem ipsum dolor sit amet.
-                    </h2>
+                    <div className="blog-title pt-3">
+                      <p className="text-xs mb-2 text-muted">
+                        <span className="text-highlight font-semibold">
+                          TRAVEL
+                        </span>{" "}
+                        - AUGUST 2023
+                      </p>
+                      <h2>Lorem ipsum dolor sit amet.</h2>
+                    </div>
                     <p className="text-muted">
                       Lorem ipsum dolor sit amet consectetur adipisicing elit.
                       Facilis quia iusto, esse dignissimos repellat repudiandae
@@ -64,11 +100,29 @@ const Blog = () => {
               </div>
               <div className="col-span-12 md:col-span-6 lg:col-span-5 flex flex-col gap-5">
                 <div className="bg-secondary">
-                  <div className="bg-white w-full h-[200px]">asd</div>
+                  <div className="w-full h-[200px]">
+                    <div className="relative w-full h-full">
+                      <Image
+                        alt="image-gallery"
+                        width="500"
+                        height="500"
+                        objectFit="cover"
+                        class="w-full h-full mb-6"
+                        src={`https://picsum.photos/500/300?random=2`}
+                      />
+                      <div className="absolute bg-black bg-opacity-0 hover:bg-opacity-70 transition w-full h-full top-0 bottom-0 left-0 right-0 mx-auto"></div>
+                    </div>
+                  </div>
                   <div className="px-5 py-3">
-                    <h2 className="text-white mt-5">
-                      Lorem ipsum dolor sit amet.
-                    </h2>
+                    <div className="blog-title pt-3">
+                      <p className="text-xs mb-2 text-muted">
+                        <span className="text-highlight font-semibold">
+                          TRAVEL
+                        </span>{" "}
+                        - AUGUST 2023
+                      </p>
+                      <h2>Lorem ipsum dolor sit amet.</h2>
+                    </div>
                     <p className="text-muted">
                       Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                       Eum soluta cupiditate dolor ratione placeat a beatae.
@@ -76,11 +130,29 @@ const Blog = () => {
                   </div>
                 </div>
                 <div className="bg-secondary">
-                  <div className="bg-white w-full h-[200px]">asd</div>
+                  <div className="w-full h-[200px]">
+                    <div className="relative w-full h-full">
+                      <Image
+                        alt="image-gallery"
+                        width="500"
+                        height="500"
+                        objectFit="cover"
+                        class="w-full h-full mb-6"
+                        src={`https://picsum.photos/500/300?random=3`}
+                      />
+                      <div className="absolute bg-black bg-opacity-0 hover:bg-opacity-70 transition w-full h-full top-0 bottom-0 left-0 right-0 mx-auto"></div>
+                    </div>
+                  </div>
                   <div className="px-5 py-3">
-                    <h2 className="text-white mt-5">
-                      Lorem ipsum dolor sit amet.
-                    </h2>
+                    <div className="blog-title pt-3">
+                      <p className="text-xs mb-2 text-muted">
+                        <span className="text-highlight font-semibold">
+                          TRAVEL
+                        </span>{" "}
+                        - AUGUST 2023
+                      </p>
+                      <h2>Lorem ipsum dolor sit amet.</h2>
+                    </div>
                     <p className="text-muted">
                       Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                       Eum soluta cupiditate dolor ratione placeat a beatae.
@@ -88,11 +160,29 @@ const Blog = () => {
                   </div>
                 </div>
                 <div className="bg-secondary">
-                  <div className="bg-white w-full h-[200px]">asd</div>
+                  <div className="w-full h-[200px]">
+                    <div className="relative w-full h-full">
+                      <Image
+                        alt="image-gallery"
+                        width="500"
+                        height="500"
+                        objectFit="cover"
+                        class="w-full h-full mb-6"
+                        src={`https://picsum.photos/500/300?random=4`}
+                      />
+                      <div className="absolute bg-black bg-opacity-0 hover:bg-opacity-70 transition w-full h-full top-0 bottom-0 left-0 right-0 mx-auto"></div>
+                    </div>
+                  </div>
                   <div className="px-5 py-3">
-                    <h2 className="text-white mt-5">
-                      Lorem ipsum dolor sit amet.
-                    </h2>
+                    <div className="blog-title pt-3">
+                      <p className="text-xs mb-2 text-muted">
+                        <span className="text-highlight font-semibold">
+                          TRAVEL
+                        </span>{" "}
+                        - AUGUST 2023
+                      </p>
+                      <h2>Lorem ipsum dolor sit amet.</h2>
+                    </div>
                     <p className="text-muted">
                       Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                       Eum soluta cupiditate dolor ratione placeat a beatae.
@@ -103,11 +193,39 @@ const Blog = () => {
             </div>
             <div className="grid grid-cols-12 gap-5 mt-10">
               <div className="col-span-12 lg:col-span-8 flex flex-col gap-5">
-                {[1, 2, 3, 4, 5, 6].map((item) => (
-                  <div key={item} className="bg-white w-full text-black">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Vitae sint placeat natus ex ipsa necessitatibus aliquid
-                    expedita perferendis facere at autem, harum
+                {[1, 2, 3, 4].map((item) => (
+                  <div
+                    key={item}
+                    className="bg-secondary w-full text-white flex gap-4 items-center"
+                  >
+                    <div className="image w-[250px] h-[150px] bg-red-500">
+                      <Image
+                        alt="image-gallery"
+                        width="500"
+                        height="500"
+                        objectFit="cover"
+                        class="w-full h-full mb-6"
+                        src={`https://picsum.photos/500/300?random=${
+                          (item + 1) * 5
+                        }`}
+                      />
+                    </div>
+                    <div className="blog-card-content py-3">
+                      <div className="blog-title mb-1">
+                        <p className="text-xs text-muted">
+                          <span className="text-highlight font-semibold">
+                            TRAVEL
+                          </span>{" "}
+                          - AUGUST 2023
+                        </p>
+                        <h2>Lorem ipsum dolor sit amet.</h2>
+                      </div>
+                      <p className="text-muted">
+                        Lorem ipsum dolor sit, amet consectetur adipisicing
+                        elit. Eum soluta cupiditate dolor ratione placeat a
+                        beatae.
+                      </p>
+                    </div>
                   </div>
                 ))}
               </div>
@@ -119,7 +237,7 @@ const Blog = () => {
                     } p-5`}
                   >
                     <div className="border-b-2 border-white pb-3 flex items-center gap-5">
-                      <div className="w-[60px] h-[60px] lg:w-[100px] lg:h-[100px] rounded-full bg-white overflow-hidden">
+                      <div className="w-[60px] h-[60px] lg:w-[100px] lg:h-[100px] rounded-full overflow-hidden">
                         <Image
                           alt="profile-image"
                           width="100"
@@ -132,7 +250,7 @@ const Blog = () => {
                         <h2 className="text-sm lg:text-[1.5em]">
                           Ivan Ardiansyah
                         </h2>
-                        <p className="text-sm lg:text-base text-muted">
+                        <p className="text-sm lg:text-base text-highlight font-semibold mt-1">
                           Author
                         </p>
                       </div>
