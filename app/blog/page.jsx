@@ -192,19 +192,20 @@ const Blog = () => {
               </div>
             </div>
             <div className="grid grid-cols-12 gap-5 mt-10">
+              {/* blog posts */}
               <div className="col-span-12 lg:col-span-8 flex flex-col gap-5">
                 {[1, 2, 3, 4].map((item) => (
                   <div
                     key={item}
                     className="bg-secondary w-full text-white flex gap-4 items-center"
                   >
-                    <div className="image w-[250px] h-[150px] bg-red-500">
+                    <div className="image w-[250px] h-[120px] lg:h-[150px]">
                       <Image
                         alt="image-gallery"
                         width="500"
                         height="500"
                         objectFit="cover"
-                        class="w-full h-full mb-6"
+                        class="w-full h-full"
                         src={`https://picsum.photos/500/300?random=${
                           (item + 1) * 5
                         }`}
@@ -213,14 +214,16 @@ const Blog = () => {
                     <div className="blog-card-content py-3">
                       <div className="blog-title mb-1">
                         <p className="text-xs text-muted">
-                          <span className="text-highlight font-semibold">
+                          <span className="text-highlight font-semibold ">
                             TRAVEL
                           </span>{" "}
                           - AUGUST 2023
                         </p>
-                        <h2>Lorem ipsum dolor sit amet.</h2>
+                        <h2 className="text-[1em] lg:text-[1.5em]">
+                          Lorem ipsum dolor sit amet.
+                        </h2>
                       </div>
-                      <p className="text-muted">
+                      <p className="text-muted text-[.8em] lg:text-md">
                         Lorem ipsum dolor sit, amet consectetur adipisicing
                         elit. Eum soluta cupiditate dolor ratione placeat a
                         beatae.
@@ -229,6 +232,7 @@ const Blog = () => {
                   </div>
                 ))}
               </div>
+              {/* author */}
               <div className="col-span-12 order-first lg:order-last lg:col-span-4">
                 <div className="bg-secondary w-full relative lg:min-h-[200px]">
                   <div
