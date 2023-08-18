@@ -6,7 +6,7 @@ const BlogDetail = () => {
     <>
       <main>
         <section>
-          <div className="container mx-auto px-10 py-12">
+          <div className="container mx-auto lg:px-10 lg:py-12">
             <div className="w-full h-[550px]">
               <Image
                 alt="image-gallery"
@@ -19,16 +19,16 @@ const BlogDetail = () => {
             </div>
           </div>
         </section>
-        <section className="container bg-secondary mx-auto py-12">
-          <div className="w-3/4 mx-auto">
+        <section className="bg-secondary mx-auto py-12">
+          <div className="container px-4 lg:px-0 lg:w-3/4 mx-auto">
             <div className="blog-title border-b-2 border-muted">
               <h1 className="text-white">Perjalanan Menuju ke Barat!</h1>
-              <p className="text-xs mb-2 text-muted">
+              <p className="text-xs mb-2 text-white">
                 <span className="text-highlight font-semibold">TRAVEL</span> -
                 AUGUST 2023
               </p>
             </div>
-            <div className="blog-content py-5 text-white">
+            <div className="blog-content py-5 text-muted">
               <p>
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam
                 explicabo aperiam nihil repudiandae officiis facilis, molestias

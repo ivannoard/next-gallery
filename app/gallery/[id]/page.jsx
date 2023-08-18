@@ -9,9 +9,9 @@ const GalleryDetail = () => {
     <>
       <main>
         <section>
-          <div className="container mx-auto bg-primary py-12 px-10">
+          <div className="container mx-auto bg-primary lg:py-12 lg:px-10">
             <div className="grid grid-cols-12 gap-5">
-              <div className="col-span-9">
+              <div className="col-span-12 lg:col-span-9">
                 <div className="h-[550px]">
                   <Image
                     alt="image-gallery"
@@ -23,11 +23,11 @@ const GalleryDetail = () => {
                   />
                 </div>
               </div>
-              <div className="col-span-3 flex flex-col hide-scrollbar overflow-y-scroll max-h-[550px] gap-3">
+              <div className="col-span-12 lg:col-span-3 flex lg:flex-col hide-scrollbar overflow-x-scroll lg:overflow-y-scroll max-h-[550px] gap-3 px-3 lg:px-0">
                 {[1, 2, 3, 4, 5, 6].map((item) => (
                   <div
                     key={item}
-                    className="max-h-[197px] cursor-pointer relative"
+                    className="flex-none h-[100px] w-[150px] lg:w-full lg:h-[197px] cursor-pointer relative"
                     onClick={() => setActiveImage(item)}
                   >
                     <div className="absolute bg-black bg-opacity-0 hover:bg-opacity-70 transition w-full h-full top-0 bottom-0 left-0 right-0 mx-auto"></div>
@@ -45,20 +45,20 @@ const GalleryDetail = () => {
             </div>
           </div>
         </section>
-        <section>
-          <div className="container mx-auto px-10">
+        <section className="mt-5 lg:mt-0">
+          <div className="container mx-auto px-3 lg:px-10">
             <div className="grid grid-cols-12 gap-5">
-              <div className="col-span-9 bg-secondary p-5">
+              <div className="col-span-12 lg:col-span-9 bg-secondary p-5">
                 <div className="gallery-title border-b-2 border-muted">
                   <h1 className="text-white">Perjalanan Menuju ke Barat!</h1>
-                  <p className="text-xs mb-2 text-muted">
+                  <p className="text-xs mb-2 text-white">
                     <span className="text-highlight font-semibold">
                       DJAKARTA
                     </span>{" "}
                     - AUGUST 2023
                   </p>
                 </div>
-                <div className="gallery-content text-white py-5">
+                <div className="gallery-content text-muted py-5">
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                     Facere deleniti molestias repudiandae odit necessitatibus,
@@ -111,7 +111,7 @@ const GalleryDetail = () => {
                   </p>
                 </div>
               </div>
-              <div className="col-span-3">
+              <div className="col-span-12 lg:col-span-3 order-first lg:order-last">
                 <div className="bg-secondary p-4">
                   <Author />
                 </div>

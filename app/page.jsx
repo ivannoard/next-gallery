@@ -169,7 +169,7 @@ export default function Home() {
                     </div>
                     <div className=" p-5 bg-secondary text-white">
                       <div className="blog-title">
-                        <p className="text-xs mb-2 text-muted">
+                        <p className="text-xs mb-2 text-white">
                           <span className="text-highlight font-semibold">
                             TRAVEL
                           </span>{" "}
