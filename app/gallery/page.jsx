@@ -14,7 +14,7 @@ const Gallery = () => {
               <div className="grid grid-cols-12 pt-24 lg:py-24 lg:h-full lg:gap-10">
                 <div className="col-span-12 lg:col-span-6 h-full">
                   <div className="lg:pt-20">
-                    <h1 className="tracking-[1rem]">GALLERY</h1>
+                    <h1 className="tracking-[1rem] text-white">GALLERY</h1>
                     <p className="text-white mt-3">
                       &ldquo;In the silent sanctuary of the gallery, photographs
                       whisper the untold, frame by frame, a symphony of frozen
@@ -23,7 +23,7 @@ const Gallery = () => {
                     </p>
                   </div>
                 </div>
-                <div className="col-span-12 lg:col-span-6 relative lg:overflow-x-scroll">
+                <div className="col-span-12 lg:col-span-6 relative lg:overflow-x-scroll hide-scrollbar">
                   <div className="mt-5 lg:mt-0 lg:px-0 lg:py-0 absolute z-[2] w-full top-0 lg:h-full flex gap-5 overflow-x-scroll lg:overflow-x-visible">
                     <div className="card bg-white w-[200px] h-[350px] flex-none lg:w-[300px] lg:h-full">
                       asd
