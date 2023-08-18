@@ -1,10 +1,13 @@
 "use client";
 import { ProfileImage } from "@/assets/images";
+import { Author } from "@/components/globals";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import React from "react";
 
 const Blog = () => {
   const [scrollPosition, setScrollPosition] = React.useState(0);
+  const router = useRouter();
 
   const handleScroll = () => {
     const position = window.pageYOffset;
@@ -33,7 +36,10 @@ const Blog = () => {
             </div>
             <div className="grid grid-cols-12 gap-5">
               <div className="col-span-12 md:col-span-6 lg:col-span-7">
-                <div className="mb-5 bg-secondary">
+                <div
+                  className="mb-5 bg-secondary cursor-pointer"
+                  onClick={() => router.push(`/blog/${1}`)}
+                >
                   <div className="w-full h-[400px]">
                     <div className="relative w-full h-full">
                       <Image
@@ -65,7 +71,10 @@ const Blog = () => {
                     </p>
                   </div>
                 </div>
-                <div className="bg-secondary">
+                <div
+                  className="bg-secondary cursor-pointer"
+                  onClick={() => router.push(`/blog/${1}`)}
+                >
                   <div className="w-full h-[400px]">
                     <div className="relative w-full h-full">
                       <Image
@@ -99,7 +108,10 @@ const Blog = () => {
                 </div>
               </div>
               <div className="col-span-12 md:col-span-6 lg:col-span-5 flex flex-col gap-5">
-                <div className="bg-secondary">
+                <div
+                  className="bg-secondary cursor-pointer"
+                  onClick={() => router.push(`/blog/${1}`)}
+                >
                   <div className="w-full h-[200px]">
                     <div className="relative w-full h-full">
                       <Image
@@ -129,7 +141,10 @@ const Blog = () => {
                     </p>
                   </div>
                 </div>
-                <div className="bg-secondary">
+                <div
+                  className="bg-secondary cursor-pointer"
+                  onClick={() => router.push(`/blog/${1}`)}
+                >
                   <div className="w-full h-[200px]">
                     <div className="relative w-full h-full">
                       <Image
@@ -159,7 +174,10 @@ const Blog = () => {
                     </p>
                   </div>
                 </div>
-                <div className="bg-secondary">
+                <div
+                  className="bg-secondary cursor-pointer"
+                  onClick={() => router.push(`/blog/${1}`)}
+                >
                   <div className="w-full h-[200px]">
                     <div className="relative w-full h-full">
                       <Image
@@ -193,44 +211,47 @@ const Blog = () => {
             </div>
             <div className="grid grid-cols-12 gap-5 mt-10">
               {/* blog posts */}
-              <div className="col-span-12 lg:col-span-8 flex flex-col gap-5">
-                {[1, 2, 3, 4].map((item) => (
-                  <div
-                    key={item}
-                    className="bg-secondary w-full text-white flex gap-4 items-center"
-                  >
-                    <div className="image w-[250px] h-[120px] lg:h-[150px]">
-                      <Image
-                        alt="image-gallery"
-                        width="500"
-                        height="500"
-                        style={{ objectFit: "cover" }}
-                        className="w-full h-full"
-                        src={`https://picsum.photos/500/300?random=${
-                          (item + 1) * 5
-                        }`}
-                      />
-                    </div>
-                    <div className="blog-card-content py-3">
-                      <div className="blog-title mb-1">
-                        <p className="text-xs text-muted">
-                          <span className="text-highlight font-semibold ">
-                            TRAVEL
-                          </span>{" "}
-                          - AUGUST 2023
-                        </p>
-                        <h2 className="text-[1em] lg:text-[1.5em]">
-                          Lorem ipsum dolor sit amet.
-                        </h2>
+              <div className="col-span-12 lg:col-span-8">
+                <div className="max-h-[680px] flex flex-col gap-5 overflow-y-scroll hide-scrollbar">
+                  {[1, 2, 3, 4, 5, 6, 7, 8].map((item) => (
+                    <div
+                      key={item}
+                      className="bg-secondary w-full text-white flex gap-4 items-center cursor-pointer"
+                      onClick={() => router.push(`/blog/${1}`)}
+                    >
+                      <div className="image w-[250px] h-[120px] lg:h-[150px]">
+                        <Image
+                          alt="image-gallery"
+                          width="500"
+                          height="500"
+                          style={{ objectFit: "cover" }}
+                          className="w-full h-full"
+                          src={`https://picsum.photos/500/300?random=${
+                            (item + 1) * 5
+                          }`}
+                        />
                       </div>
-                      <p className="text-muted text-[.8em] lg:text-md">
-                        Lorem ipsum dolor sit, amet consectetur adipisicing
-                        elit. Eum soluta cupiditate dolor ratione placeat a
-                        beatae.
-                      </p>
+                      <div className="blog-card-content py-3">
+                        <div className="blog-title mb-1">
+                          <p className="text-xs text-muted">
+                            <span className="text-highlight font-semibold ">
+                              TRAVEL
+                            </span>{" "}
+                            - AUGUST 2023
+                          </p>
+                          <h2 className="text-[1em] lg:text-[1.5em]">
+                            Lorem ipsum dolor sit amet.
+                          </h2>
+                        </div>
+                        <p className="text-muted text-[.8em] lg:text-md">
+                          Lorem ipsum dolor sit, amet consectetur adipisicing
+                          elit. Eum soluta cupiditate dolor ratione placeat a
+                          beatae.
+                        </p>
+                      </div>
                     </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
               {/* author */}
               <div className="col-span-12 order-first lg:order-last lg:col-span-4">
@@ -240,43 +261,7 @@ const Blog = () => {
                       scrollPosition >= 1406 ? "lg:pt-[127px]" : "lg:pt-5"
                     } p-5`}
                   >
-                    <div className="border-b-2 border-white pb-3 flex items-center gap-5">
-                      <div className="w-[60px] h-[60px] lg:w-[100px] lg:h-[100px] rounded-full overflow-hidden">
-                        <Image
-                          alt="profile-image"
-                          width="100"
-                          height="100"
-                          src={ProfileImage}
-                          style={{ objectFit: "cover" }}
-                        />
-                      </div>
-                      <div className="text-white">
-                        <h2 className="text-sm lg:text-[1.5em]">
-                          Ivan Ardiansyah
-                        </h2>
-                        <p className="text-sm lg:text-base text-highlight font-semibold mt-1">
-                          Author
-                        </p>
-                      </div>
-                    </div>
-                    <div className="hidden lg:block mt-3 text-white">
-                      <p className="text-muted">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Maiores quam ducimus magnam? Commodi corrupti suscipit
-                        eveniet ducimus laudantium fugit, aliquid, debitis animi
-                        voluptatibus maiores sapiente libero, culpa ipsam
-                        cupiditate dolore officiis ipsum rerum illum officia est
-                        voluptas placeat deserunt esse. Blanditiis eius
-                        doloribus sapiente voluptatem rem. Quod repellendus sed
-                        aliquid exercitationem iure dolore aut, inventore rerum,
-                        libero, quasi dolor optio fugit tempora laboriosam vero
-                        cum nobis corporis sequi nesciunt velit et earum neque
-                        voluptatibus sint! Temporibus rem eum assumenda? Dicta
-                        ullam veritatis doloribus quam! Eveniet corrupti
-                        voluptate ad a sequi vitae at esse, voluptatum
-                        temporibus minima mollitia dicta dolorum veniam?
-                      </p>
-                    </div>
+                    <Author />
                   </div>
                 </div>
               </div>

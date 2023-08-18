@@ -3,11 +3,13 @@ import React from "react";
 import { ProfileImage } from "@/assets/images";
 import Image from "next/image";
 import { SplashScreen } from "@/components/globals";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
   const displayText = ["Djakarta", "Semarang", "Batang", "Yogyakarta"];
-  const [activeDisplay, setActiveDisplay] = React.useState();
   const [index, setIndex] = React.useState(0);
+  const [activeDisplay, setActiveDisplay] = React.useState();
+  const router = useRouter();
 
   const [isShow, setIsShow] = React.useState(false);
   React.useEffect(() => {
@@ -92,7 +94,8 @@ export default function Home() {
                 {[1, 2, 3, 4, 5, 6].map((item) => (
                   <div
                     key={item}
-                    className="col-span-12 md:col-span-6 lg:col-span-4 h-[500px] bg-white text-black flex flex-col"
+                    className="col-span-12 md:col-span-6 lg:col-span-4 h-[500px] bg-white text-black flex flex-col cursor-pointer"
+                    onClick={() => router.push(`/gallery/${item}`)}
                   >
                     <div className="relative w-full h-full">
                       <Image
@@ -150,7 +153,8 @@ export default function Home() {
                 {[1, 2, 3, 4].map((item) => (
                   <div
                     key={item}
-                    className="col-span-12 md:col-span-6 lg:col-span-6 bg-white text-black flex flex-col"
+                    className="col-span-12 md:col-span-6 lg:col-span-6 bg-white text-black flex flex-col cursor-pointer"
+                    onClick={() => router.push(`/blog/${item}`)}
                   >
                     <div className="relative w-full h-full">
                       <Image

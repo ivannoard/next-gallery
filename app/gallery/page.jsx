@@ -1,7 +1,10 @@
+"use client";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import React from "react";
 
 const Gallery = () => {
+  const router = useRouter();
   return (
     <>
       <main>
@@ -49,7 +52,10 @@ const Gallery = () => {
               <span className="hidden lg:inline"> -</span>
             </h4>
             <div className="gap-5 lg:gap-8 columns-2 lg:columns-4 mt-10">
-              <div className="relative">
+              <div
+                className="relative cursor-pointer"
+                onClick={() => router.push(`/gallery/${1}`)}
+              >
                 <div className="absolute bg-black bg-opacity-0 hover:bg-opacity-70 transition w-full h-full top-0 bottom-0 left-0 right-0 mx-auto"></div>
                 <Image
                   alt="image-gallery"
@@ -60,7 +66,10 @@ const Gallery = () => {
                   src="https://picsum.photos/500/300?random=1"
                 />
               </div>
-              <div className="relative">
+              <div
+                className="relative cursor-pointer"
+                onClick={() => router.push(`/gallery/${1}`)}
+              >
                 <div className="absolute bg-black bg-opacity-0 hover:bg-opacity-70 transition w-full h-full top-0 bottom-0 left-0 right-0 mx-auto"></div>
 
                 <Image
@@ -72,7 +81,10 @@ const Gallery = () => {
                   src="https://picsum.photos/500/300?random=2"
                 />
               </div>
-              <div className="relative">
+              <div
+                className="relative cursor-pointer"
+                onClick={() => router.push(`/gallery/${1}`)}
+              >
                 <div className="absolute bg-black bg-opacity-0 hover:bg-opacity-70 transition w-full h-full top-0 bottom-0 left-0 right-0 mx-auto"></div>
 
                 <Image
@@ -84,7 +96,10 @@ const Gallery = () => {
                   src="https://picsum.photos/500/300?random=3"
                 />
               </div>
-              <div className="relative">
+              <div
+                className="relative cursor-pointer"
+                onClick={() => router.push(`/gallery/${1}`)}
+              >
                 <div className="absolute bg-black bg-opacity-0 hover:bg-opacity-70 transition w-full h-full top-0 bottom-0 left-0 right-0 mx-auto"></div>
 
                 <Image
@@ -96,7 +111,10 @@ const Gallery = () => {
                   src="https://picsum.photos/500/300?random=4"
                 />
               </div>
-              <div className="relative">
+              <div
+                className="relative cursor-pointer"
+                onClick={() => router.push(`/gallery/${1}`)}
+              >
                 <div className="absolute bg-black bg-opacity-0 hover:bg-opacity-70 transition w-full h-full top-0 bottom-0 left-0 right-0 mx-auto"></div>
 
                 <Image
@@ -108,7 +126,10 @@ const Gallery = () => {
                   src="https://picsum.photos/500/300?random=5"
                 />
               </div>
-              <div className="relative">
+              <div
+                className="relative cursor-pointer"
+                onClick={() => router.push(`/gallery/${1}`)}
+              >
                 <div className="absolute bg-black bg-opacity-0 hover:bg-opacity-70 transition w-full h-full top-0 bottom-0 left-0 right-0 mx-auto"></div>
 
                 <Image
@@ -120,7 +141,10 @@ const Gallery = () => {
                   src="https://picsum.photos/500/300?random=6"
                 />
               </div>
-              <div className="relative">
+              <div
+                className="relative cursor-pointer"
+                onClick={() => router.push(`/gallery/${1}`)}
+              >
                 <div className="absolute bg-black bg-opacity-0 hover:bg-opacity-70 transition w-full h-full top-0 bottom-0 left-0 right-0 mx-auto"></div>
 
                 <Image
@@ -132,7 +156,10 @@ const Gallery = () => {
                   src="https://picsum.photos/500/300?random=7"
                 />
               </div>
-              <div className="relative">
+              <div
+                className="relative cursor-pointer"
+                onClick={() => router.push(`/gallery/${1}`)}
+              >
                 <div className="absolute bg-black bg-opacity-0 hover:bg-opacity-70 transition w-full h-full top-0 bottom-0 left-0 right-0 mx-auto"></div>
 
                 <Image
@@ -144,7 +171,10 @@ const Gallery = () => {
                   src="https://picsum.photos/500/300?random=8"
                 />
               </div>
-              <div className="relative">
+              <div
+                className="relative cursor-pointer"
+                onClick={() => router.push(`/gallery/${1}`)}
+              >
                 <div className="absolute bg-black bg-opacity-0 hover:bg-opacity-70 transition w-full h-full top-0 bottom-0 left-0 right-0 mx-auto"></div>
 
                 <Image
@@ -156,7 +186,10 @@ const Gallery = () => {
                   src="https://picsum.photos/500/300?random=9"
                 />
               </div>
-              <div className="relative">
+              <div
+                className="relative cursor-pointer"
+                onClick={() => router.push(`/gallery/${1}`)}
+              >
                 <div className="absolute bg-black bg-opacity-0 hover:bg-opacity-70 transition w-full h-full top-0 bottom-0 left-0 right-0 mx-auto"></div>
 
                 <Image
@@ -168,7 +201,10 @@ const Gallery = () => {
                   src="https://picsum.photos/500/300?random=10"
                 />
               </div>
-              <div className="relative">
+              <div
+                className="relative cursor-pointer"
+                onClick={() => router.push(`/gallery/${1}`)}
+              >
                 <div className="absolute bg-black bg-opacity-0 hover:bg-opacity-70 transition w-full h-full top-0 bottom-0 left-0 right-0 mx-auto"></div>
 
                 <Image
@@ -180,7 +216,10 @@ const Gallery = () => {
                   src="https://picsum.photos/500/300?random=11"
                 />
               </div>
-              <div className="relative">
+              <div
+                className="relative cursor-pointer"
+                onClick={() => router.push(`/gallery/${1}`)}
+              >
                 <div className="absolute bg-black bg-opacity-0 hover:bg-opacity-70 transition w-full h-full top-0 bottom-0 left-0 right-0 mx-auto"></div>
 
                 <Image
@@ -192,7 +231,10 @@ const Gallery = () => {
                   src="https://picsum.photos/500/300?random=12"
                 />
               </div>
-              <div className="relative">
+              <div
+                className="relative cursor-pointer"
+                onClick={() => router.push(`/gallery/${1}`)}
+              >
                 <div className="absolute bg-black bg-opacity-0 hover:bg-opacity-70 transition w-full h-full top-0 bottom-0 left-0 right-0 mx-auto"></div>
 
                 <Image
@@ -204,7 +246,10 @@ const Gallery = () => {
                   src="https://picsum.photos/500/300?random=13"
                 />
               </div>
-              <div className="relative">
+              <div
+                className="relative cursor-pointer"
+                onClick={() => router.push(`/gallery/${1}`)}
+              >
                 <div className="absolute bg-black bg-opacity-0 hover:bg-opacity-70 transition w-full h-full top-0 bottom-0 left-0 right-0 mx-auto"></div>
 
                 <Image
@@ -216,7 +261,10 @@ const Gallery = () => {
                   src="https://picsum.photos/500/300?random=14"
                 />
               </div>
-              <div className="relative">
+              <div
+                className="relative cursor-pointer"
+                onClick={() => router.push(`/gallery/${1}`)}
+              >
                 <div className="absolute bg-black bg-opacity-0 hover:bg-opacity-70 transition w-full h-full top-0 bottom-0 left-0 right-0 mx-auto"></div>
 
                 <Image
@@ -228,7 +276,10 @@ const Gallery = () => {
                   src="https://picsum.photos/500/300?random=15"
                 />
               </div>
-              <div className="relative">
+              <div
+                className="relative cursor-pointer"
+                onClick={() => router.push(`/gallery/${1}`)}
+              >
                 <div className="absolute bg-black bg-opacity-0 hover:bg-opacity-70 transition w-full h-full top-0 bottom-0 left-0 right-0 mx-auto"></div>
 
                 <Image
@@ -240,7 +291,10 @@ const Gallery = () => {
                   src="https://picsum.photos/500/300?random=16"
                 />
               </div>
-              <div className="relative">
+              <div
+                className="relative cursor-pointer"
+                onClick={() => router.push(`/gallery/${1}`)}
+              >
                 <div className="absolute bg-black bg-opacity-0 hover:bg-opacity-70 transition w-full h-full top-0 bottom-0 left-0 right-0 mx-auto"></div>
 
                 <Image
@@ -252,7 +306,10 @@ const Gallery = () => {
                   src="https://picsum.photos/500/300?random=17"
                 />
               </div>
-              <div className="relative">
+              <div
+                className="relative cursor-pointer"
+                onClick={() => router.push(`/gallery/${1}`)}
+              >
                 <div className="absolute bg-black bg-opacity-0 hover:bg-opacity-70 transition w-full h-full top-0 bottom-0 left-0 right-0 mx-auto"></div>
 
                 <Image
@@ -264,7 +321,10 @@ const Gallery = () => {
                   src="https://picsum.photos/500/300?random=18"
                 />
               </div>
-              <div className="relative">
+              <div
+                className="relative cursor-pointer"
+                onClick={() => router.push(`/gallery/${1}`)}
+              >
                 <div className="absolute bg-black bg-opacity-0 hover:bg-opacity-70 transition w-full h-full top-0 bottom-0 left-0 right-0 mx-auto"></div>
 
                 <Image
@@ -276,7 +336,10 @@ const Gallery = () => {
                   src="https://picsum.photos/500/300?random=19"
                 />
               </div>
-              <div className="relative">
+              <div
+                className="relative cursor-pointer"
+                onClick={() => router.push(`/gallery/${1}`)}
+              >
                 <div className="absolute bg-black bg-opacity-0 hover:bg-opacity-70 transition w-full h-full top-0 bottom-0 left-0 right-0 mx-auto"></div>
 
                 <Image
@@ -288,7 +351,10 @@ const Gallery = () => {
                   src="https://picsum.photos/500/300?random=20"
                 />
               </div>
-              <div className="relative">
+              <div
+                className="relative cursor-pointer"
+                onClick={() => router.push(`/gallery/${1}`)}
+              >
                 <div className="absolute bg-black bg-opacity-0 hover:bg-opacity-70 transition w-full h-full top-0 bottom-0 left-0 right-0 mx-auto"></div>
 
                 <Image
@@ -300,7 +366,10 @@ const Gallery = () => {
                   src="https://picsum.photos/500/300?random=21"
                 />
               </div>
-              <div className="relative">
+              <div
+                className="relative cursor-pointer"
+                onClick={() => router.push(`/gallery/${1}`)}
+              >
                 <div className="absolute bg-black bg-opacity-0 hover:bg-opacity-70 transition w-full h-full top-0 bottom-0 left-0 right-0 mx-auto"></div>
 
                 <Image
@@ -312,7 +381,10 @@ const Gallery = () => {
                   src="https://picsum.photos/500/300?random=22"
                 />
               </div>
-              <div className="relative">
+              <div
+                className="relative cursor-pointer"
+                onClick={() => router.push(`/gallery/${1}`)}
+              >
                 <div className="absolute bg-black bg-opacity-0 hover:bg-opacity-70 transition w-full h-full top-0 bottom-0 left-0 right-0 mx-auto"></div>
 
                 <Image
@@ -324,7 +396,10 @@ const Gallery = () => {
                   src="https://picsum.photos/500/300?random=23"
                 />
               </div>
-              <div className="relative">
+              <div
+                className="relative cursor-pointer"
+                onClick={() => router.push(`/gallery/${1}`)}
+              >
                 <div className="absolute bg-black bg-opacity-0 hover:bg-opacity-70 transition w-full h-full top-0 bottom-0 left-0 right-0 mx-auto"></div>
 
                 <Image
@@ -336,7 +411,10 @@ const Gallery = () => {
                   src="https://picsum.photos/500/300?random=24"
                 />
               </div>
-              <div className="relative">
+              <div
+                className="relative cursor-pointer"
+                onClick={() => router.push(`/gallery/${1}`)}
+              >
                 <div className="absolute bg-black bg-opacity-0 hover:bg-opacity-70 transition w-full h-full top-0 bottom-0 left-0 right-0 mx-auto"></div>
 
                 <Image
@@ -348,7 +426,10 @@ const Gallery = () => {
                   src="https://picsum.photos/500/300?random=25"
                 />
               </div>
-              <div className="relative">
+              <div
+                className="relative cursor-pointer"
+                onClick={() => router.push(`/gallery/${1}`)}
+              >
                 <div className="absolute bg-black bg-opacity-0 hover:bg-opacity-70 transition w-full h-full top-0 bottom-0 left-0 right-0 mx-auto"></div>
 
                 <Image
@@ -360,7 +441,10 @@ const Gallery = () => {
                   src="https://picsum.photos/500/300?random=26"
                 />
               </div>
-              <div className="relative">
+              <div
+                className="relative cursor-pointer"
+                onClick={() => router.push(`/gallery/${1}`)}
+              >
                 <div className="absolute bg-black bg-opacity-0 hover:bg-opacity-70 transition w-full h-full top-0 bottom-0 left-0 right-0 mx-auto"></div>
 
                 <Image
@@ -372,7 +456,10 @@ const Gallery = () => {
                   src="https://picsum.photos/500/300?random=27"
                 />
               </div>
-              <div className="relative">
+              <div
+                className="relative cursor-pointer"
+                onClick={() => router.push(`/gallery/${1}`)}
+              >
                 <div className="absolute bg-black bg-opacity-0 hover:bg-opacity-70 transition w-full h-full top-0 bottom-0 left-0 right-0 mx-auto"></div>
 
                 <Image
@@ -384,7 +471,10 @@ const Gallery = () => {
                   src="https://picsum.photos/500/300?random=28"
                 />
               </div>
-              <div className="relative">
+              <div
+                className="relative cursor-pointer"
+                onClick={() => router.push(`/gallery/${1}`)}
+              >
                 <div className="absolute bg-black bg-opacity-0 hover:bg-opacity-70 transition w-full h-full top-0 bottom-0 left-0 right-0 mx-auto"></div>
 
                 <Image
@@ -396,7 +486,10 @@ const Gallery = () => {
                   src="https://picsum.photos/500/300?random=29"
                 />
               </div>
-              <div className="relative">
+              <div
+                className="relative cursor-pointer"
+                onClick={() => router.push(`/gallery/${1}`)}
+              >
                 <div className="absolute bg-black bg-opacity-0 hover:bg-opacity-70 transition w-full h-full top-0 bottom-0 left-0 right-0 mx-auto"></div>
 
                 <Image
