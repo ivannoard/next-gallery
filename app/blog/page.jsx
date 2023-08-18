@@ -40,8 +40,8 @@ const Blog = () => {
                         alt="image-gallery"
                         width="500"
                         height="500"
-                        objectFit="cover"
-                        class="w-full h-full mb-6"
+                        style={{ objectFit: "cover" }}
+                        className="w-full h-full mb-6"
                         src={`https://picsum.photos/500/300?random=1`}
                       />
                       <div className="absolute bg-black bg-opacity-0 hover:bg-opacity-70 transition w-full h-full top-0 bottom-0 left-0 right-0 mx-auto"></div>
@@ -72,8 +72,8 @@ const Blog = () => {
                         alt="image-gallery"
                         width="500"
                         height="500"
-                        objectFit="cover"
-                        class="w-full h-full mb-6"
+                        style={{ objectFit: "cover" }}
+                        className="w-full h-full mb-6"
                         src={`https://picsum.photos/500/300?random=5`}
                       />
                       <div className="absolute bg-black bg-opacity-0 hover:bg-opacity-70 transition w-full h-full top-0 bottom-0 left-0 right-0 mx-auto"></div>
@@ -106,8 +106,8 @@ const Blog = () => {
                         alt="image-gallery"
                         width="500"
                         height="500"
-                        objectFit="cover"
-                        class="w-full h-full mb-6"
+                        style={{ objectFit: "cover" }}
+                        className="w-full h-full mb-6"
                         src={`https://picsum.photos/500/300?random=2`}
                       />
                       <div className="absolute bg-black bg-opacity-0 hover:bg-opacity-70 transition w-full h-full top-0 bottom-0 left-0 right-0 mx-auto"></div>
@@ -136,8 +136,8 @@ const Blog = () => {
                         alt="image-gallery"
                         width="500"
                         height="500"
-                        objectFit="cover"
-                        class="w-full h-full mb-6"
+                        style={{ objectFit: "cover" }}
+                        className="w-full h-full mb-6"
                         src={`https://picsum.photos/500/300?random=3`}
                       />
                       <div className="absolute bg-black bg-opacity-0 hover:bg-opacity-70 transition w-full h-full top-0 bottom-0 left-0 right-0 mx-auto"></div>
@@ -166,8 +166,8 @@ const Blog = () => {
                         alt="image-gallery"
                         width="500"
                         height="500"
-                        objectFit="cover"
-                        class="w-full h-full mb-6"
+                        style={{ objectFit: "cover" }}
+                        className="w-full h-full mb-6"
                         src={`https://picsum.photos/500/300?random=4`}
                       />
                       <div className="absolute bg-black bg-opacity-0 hover:bg-opacity-70 transition w-full h-full top-0 bottom-0 left-0 right-0 mx-auto"></div>
@@ -204,8 +204,8 @@ const Blog = () => {
                         alt="image-gallery"
                         width="500"
                         height="500"
-                        objectFit="cover"
-                        class="w-full h-full"
+                        style={{ objectFit: "cover" }}
+                        className="w-full h-full"
                         src={`https://picsum.photos/500/300?random=${
                           (item + 1) * 5
                         }`}
@@ -247,7 +247,7 @@ const Blog = () => {
                           width="100"
                           height="100"
                           src={ProfileImage}
-                          objectFit="cover"
+                          style={{ objectFit: "cover" }}
                         />
                       </div>
                       <div className="text-white">

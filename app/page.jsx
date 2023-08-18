@@ -99,8 +99,8 @@ export default function Home() {
                         alt="image-gallery"
                         width="500"
                         height="500"
-                        objectFit="cover"
-                        class="w-full h-full mb-6"
+                        style={{ objectFit: "cover" }}
+                        className="w-full h-full mb-6"
                         src={`https://picsum.photos/500/300?random=${item}`}
                       />
                       <div className="absolute bg-black bg-opacity-0 hover:bg-opacity-70 transition w-full h-full top-0 bottom-0 left-0 right-0 mx-auto"></div>
@@ -157,8 +157,8 @@ export default function Home() {
                         alt="image-gallery"
                         width="500"
                         height="500"
-                        objectFit="cover"
-                        class="w-full h-full mb-6"
+                        style={{ objectFit: "cover" }}
+                        className="w-full h-full mb-6"
                         src={`https://picsum.photos/500/300?random=${item}`}
                       />
                       <div className="absolute bg-black bg-opacity-0 hover:bg-opacity-70 transition w-full h-full top-0 bottom-0 left-0 right-0 mx-auto"></div>
