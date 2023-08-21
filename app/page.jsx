@@ -4,20 +4,53 @@ import { ProfileImage } from "@/assets/images";
 import Image from "next/image";
 import { SplashScreen } from "@/components/globals";
 import { useRouter } from "next/navigation";
+import { convertDate } from "@/utils/date";
+import { db } from "@/utils/firebase";
+import { capitalizeFirstSentence } from "@/utils/words";
 
 export default function Home() {
   const displayText = ["Djakarta", "Semarang", "Batang", "Yogyakarta"];
+  const router = useRouter();
   const [index, setIndex] = React.useState(0);
   const [activeDisplay, setActiveDisplay] = React.useState();
-  const router = useRouter();
-
   const [isShow, setIsShow] = React.useState(false);
+  const [galleryData, setGalleryData] = React.useState(null);
+  const [blogData, setBlogData] = React.useState(null);
+
+  // get Gallery Data
+  React.useEffect(() => {
+    const unsubscribe = db.collection("Gallery").onSnapshot((snapshot) => {
+      const blogsData = snapshot.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+      }));
+      setGalleryData(blogsData);
+    });
+
+    return () => unsubscribe();
+  }, []);
+
+  // get Blog Data
+  React.useEffect(() => {
+    const unsubscribe = db.collection("Blogs").onSnapshot((snapshot) => {
+      const blogsData = snapshot.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+      }));
+      setBlogData(blogsData);
+    });
+
+    return () => unsubscribe();
+  }, []);
+
+  // splash screen
   React.useEffect(() => {
     setTimeout(() => {
       setIsShow(true);
     }, 2000);
   }, []);
 
+  // animation text jumbotron
   React.useEffect(() => {
     const displayLength = displayText.length - 1;
     if (displayText.length > 0) {
@@ -91,11 +124,11 @@ export default function Home() {
                 </a>
               </div>
               <div className="grid grid-cols-12 gap-3 lg:gap-5 mt-5">
-                {[1, 2, 3, 4, 5, 6].map((item) => (
+                {galleryData?.map((item) => (
                   <div
-                    key={item}
+                    key={item.id}
                     className="col-span-12 md:col-span-6 lg:col-span-4 h-[500px] bg-white text-black flex flex-col cursor-pointer"
-                    onClick={() => router.push(`/gallery/${item}`)}
+                    onClick={() => router.push(`/gallery/${item.id}`)}
                   >
                     <div className="relative w-full h-full">
                       <Image
@@ -104,13 +137,17 @@ export default function Home() {
                         height="500"
                         style={{ objectFit: "cover" }}
                         className="w-full h-full mb-6"
-                        src={`https://picsum.photos/500/300?random=${item}`}
+                        src={`https://picsum.photos/500/300?random=${item.images[0].url}`}
                       />
                       <div className="absolute bg-black bg-opacity-0 hover:bg-opacity-70 transition w-full h-full top-0 bottom-0 left-0 right-0 mx-auto"></div>
                     </div>
                     <div className="p-5 bg-secondary text-center">
-                      <h4 className="tracking-[.4rem] text-white">DJAKARTA</h4>
-                      <p className="text-sm text-highlight mt-3">15 photos</p>
+                      <h4 className="tracking-[.4rem] text-white">
+                        {capitalizeFirstSentence(item.place)}
+                      </h4>
+                      <p className="text-sm text-highlight mt-3">
+                        {item.images.length} photos
+                      </p>
                     </div>
                   </div>
                 ))}

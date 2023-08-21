@@ -65,6 +65,15 @@ h6 {
   scrollbar-width: none; /* Firefox */
 }
 
+/* blogs */
+/* .content-blog {
+  white-space: wrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 500px;
+  max-height: 200px;
+} */
+
 @media only screen and (min-width: 1280px) {
   .swipe-effect-item {
     padding: 8px;

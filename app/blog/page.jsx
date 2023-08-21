@@ -1,6 +1,7 @@
 "use client";
-import { ProfileImage } from "@/assets/images";
 import { Author } from "@/components/globals";
+import { convertDate } from "@/utils/date";
+import { db } from "@/utils/firebase";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import React from "react";
@@ -9,10 +10,27 @@ const Blog = () => {
   const [scrollPosition, setScrollPosition] = React.useState(0);
   const router = useRouter();
 
+  const [blogs, setBlogs] = React.useState([]);
+
   const handleScroll = () => {
     const position = window.pageYOffset;
     setScrollPosition(position);
   };
+
+  React.useEffect(() => {
+    const unsubscribe = db.collection("Blogs").onSnapshot((snapshot) => {
+      const blogsData = snapshot.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+      }));
+      setBlogs(blogsData);
+    });
+
+    return () => unsubscribe();
+  }, []);
+
+  console.log(blogs);
+
   React.useEffect(() => {
     window.addEventListener("scroll", handleScroll, { passive: true });
 
@@ -36,9 +54,10 @@ const Blog = () => {
             </div>
             <div className="grid grid-cols-12 gap-5">
               <div className="col-span-12 md:col-span-6 lg:col-span-7">
+                {/* blog left */}
                 <div
                   className="mb-5 bg-secondary cursor-pointer"
-                  onClick={() => router.push(`/blog/${1}`)}
+                  onClick={() => router.push(`/blog/${blogs[0]?.id}`)}
                 >
                   <div className="w-full h-[400px]">
                     <div className="relative w-full h-full">
@@ -57,23 +76,20 @@ const Blog = () => {
                     <div className="blog-title pt-3">
                       <p className="text-xs mb-2 text-muted">
                         <span className="text-highlight font-semibold">
-                          TRAVEL
+                          {blogs[0]?.tag}
                         </span>{" "}
-                        - AUGUST 2023
+                        - {convertDate(blogs[0])}
                       </p>
-                      <h2>Lorem ipsum dolor sit amet.</h2>
+                      <h2>{blogs[0]?.title}</h2>
                     </div>
                     <p className="text-muted">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Facilis quia iusto, esse dignissimos repellat repudiandae
-                      perspiciatis quas et accusantium corrupti optio quam
-                      sequi, quisquam iure?
+                      {blogs[0]?.content.slice(0, 350)} . . .
                     </p>
                   </div>
                 </div>
                 <div
                   className="bg-secondary cursor-pointer"
-                  onClick={() => router.push(`/blog/${1}`)}
+                  onClick={() => router.push(`/blog/${blogs[1]?.id}`)}
                 >
                   <div className="w-full h-[400px]">
                     <div className="relative w-full h-full">
@@ -92,25 +108,23 @@ const Blog = () => {
                     <div className="blog-title pt-3">
                       <p className="text-xs mb-2 text-muted">
                         <span className="text-highlight font-semibold">
-                          TRAVEL
+                          {blogs[1]?.tag}
                         </span>{" "}
-                        - AUGUST 2023
+                        - {convertDate(blogs[1])}
                       </p>
-                      <h2>Lorem ipsum dolor sit amet.</h2>
+                      <h2>{blogs[1]?.title}</h2>
                     </div>
                     <p className="text-muted">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Facilis quia iusto, esse dignissimos repellat repudiandae
-                      perspiciatis quas et accusantium corrupti optio quam
-                      sequi, quisquam iure?
+                      {blogs[1]?.content.slice(0, 350)} . . .
                     </p>
                   </div>
                 </div>
               </div>
+              {/* blog right */}
               <div className="col-span-12 md:col-span-6 lg:col-span-5 flex flex-col gap-5">
                 <div
                   className="bg-secondary cursor-pointer"
-                  onClick={() => router.push(`/blog/${1}`)}
+                  onClick={() => router.push(`/blog/${blogs[2]?.id}`)}
                 >
                   <div className="w-full h-[200px]">
                     <div className="relative w-full h-full">
@@ -129,21 +143,20 @@ const Blog = () => {
                     <div className="blog-title pt-3">
                       <p className="text-xs mb-2 text-muted">
                         <span className="text-highlight font-semibold">
-                          TRAVEL
+                          {blogs[1]?.tag}
                         </span>{" "}
-                        - AUGUST 2023
+                        - {convertDate(blogs[1])}
                       </p>
-                      <h2>Lorem ipsum dolor sit amet.</h2>
+                      <h2>{blogs[1]?.title}</h2>
                     </div>
                     <p className="text-muted">
-                      Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                      Eum soluta cupiditate dolor ratione placeat a beatae.
+                      {blogs[1]?.content.slice(0, 250)} . . .
                     </p>
                   </div>
                 </div>
                 <div
                   className="bg-secondary cursor-pointer"
-                  onClick={() => router.push(`/blog/${1}`)}
+                  onClick={() => router.push(`/blog/${blogs[3]?.id}`)}
                 >
                   <div className="w-full h-[200px]">
                     <div className="relative w-full h-full">
@@ -162,21 +175,20 @@ const Blog = () => {
                     <div className="blog-title pt-3">
                       <p className="text-xs mb-2 text-muted">
                         <span className="text-highlight font-semibold">
-                          TRAVEL
+                          {blogs[1]?.tag}
                         </span>{" "}
-                        - AUGUST 2023
+                        - {convertDate(blogs[1])}
                       </p>
-                      <h2>Lorem ipsum dolor sit amet.</h2>
+                      <h2>{blogs[1]?.title}</h2>
                     </div>
                     <p className="text-muted">
-                      Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                      Eum soluta cupiditate dolor ratione placeat a beatae.
+                      {blogs[1]?.content.slice(0, 250)} . . .
                     </p>
                   </div>
                 </div>
                 <div
                   className="bg-secondary cursor-pointer"
-                  onClick={() => router.push(`/blog/${1}`)}
+                  onClick={() => router.push(`/blog/${blogs[4]?.id}`)}
                 >
                   <div className="w-full h-[200px]">
                     <div className="relative w-full h-full">
@@ -195,15 +207,14 @@ const Blog = () => {
                     <div className="blog-title pt-3">
                       <p className="text-xs mb-2 text-muted">
                         <span className="text-highlight font-semibold">
-                          TRAVEL
+                          {blogs[1]?.tag}
                         </span>{" "}
-                        - AUGUST 2023
+                        - {convertDate(blogs[1])}
                       </p>
-                      <h2>Lorem ipsum dolor sit amet.</h2>
+                      <h2>{blogs[1]?.title}</h2>
                     </div>
                     <p className="text-muted">
-                      Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                      Eum soluta cupiditate dolor ratione placeat a beatae.
+                      {blogs[1]?.content.slice(0, 250)} . . .
                     </p>
                   </div>
                 </div>
@@ -213,21 +224,21 @@ const Blog = () => {
               {/* blog posts */}
               <div className="col-span-12 lg:col-span-8">
                 <div className="max-h-[680px] flex flex-col gap-5 overflow-y-scroll hide-scrollbar">
-                  {[1, 2, 3, 4, 5, 6, 7, 8].map((item) => (
+                  {blogs?.map((item, index) => (
                     <div
-                      key={item}
-                      className="bg-secondary w-full text-white flex gap-4 items-center cursor-pointer"
-                      onClick={() => router.push(`/blog/${1}`)}
+                      key={item.id}
+                      className="bg-secondary w-full text-white flex items-center gap-4 cursor-pointer pr-4"
+                      onClick={() => router.push(`/blog/${item.id}`)}
                     >
-                      <div className="image w-[250px] h-[120px] lg:h-[150px]">
+                      <div className="image w-[250px] h-[120px] lg:h-[180px] flex-none">
                         <Image
                           alt="image-gallery"
-                          width="500"
-                          height="500"
+                          width="0"
+                          height="0"
                           style={{ objectFit: "cover" }}
                           className="w-full h-full"
                           src={`https://picsum.photos/500/300?random=${
-                            (item + 1) * 5
+                            (index + 1) * 5
                           }`}
                         />
                       </div>
@@ -235,18 +246,16 @@ const Blog = () => {
                         <div className="blog-title mb-1">
                           <p className="text-xs text-muted">
                             <span className="text-highlight font-semibold ">
-                              TRAVEL
+                              {item.tag.toUpperCase()}
                             </span>{" "}
-                            - AUGUST 2023
+                            - {convertDate(item)}
                           </p>
-                          <h2 className="text-[1em] lg:text-[1.5em]">
-                            Lorem ipsum dolor sit amet.
+                          <h2 className="text-[1em] lg:text-[1.5em] mt-1">
+                            {item.title}
                           </h2>
                         </div>
-                        <p className="text-muted text-[.8em] lg:text-md">
-                          Lorem ipsum dolor sit, amet consectetur adipisicing
-                          elit. Eum soluta cupiditate dolor ratione placeat a
-                          beatae.
+                        <p className="text-muted text-[.8em] lg:text-md content-blog">
+                          {item.content.slice(0, 480)} . . .
                         </p>
                       </div>
                     </div>
@@ -258,7 +267,7 @@ const Blog = () => {
                 <div className="bg-secondary w-full relative lg:min-h-[200px]">
                   <div
                     className={`sticky top-0 transition-all duration-1000 ${
-                      scrollPosition >= 1406 ? "lg:pt-[127px]" : "lg:pt-5"
+                      scrollPosition >= 1506 ? "lg:pt-[127px]" : "lg:pt-5"
                     } p-5`}
                   >
                     <Author />
