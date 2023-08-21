@@ -25,17 +25,49 @@ const Gallery = () => {
                 </div>
                 <div className="col-span-12 lg:col-span-6 relative lg:overflow-x-scroll hide-scrollbar">
                   <div className="mt-5 lg:mt-0 lg:px-0 lg:py-0 absolute z-[2] w-full top-0 lg:h-full flex gap-5 overflow-x-scroll lg:overflow-x-visible">
-                    <div className="card bg-white w-[200px] h-[350px] flex-none lg:w-[300px] lg:h-full">
-                      asd
+                    <div className="card w-[200px] h-[350px] flex-none lg:w-[300px] lg:h-full relative">
+                      <div className="absolute bg-black bg-opacity-0 hover:bg-opacity-70 transition w-full h-full top-0 bottom-0 left-0 right-0 mx-auto"></div>
+                      <Image
+                        alt="image-gallery"
+                        width="500"
+                        height="500"
+                        style={{ objectFit: "cover" }}
+                        className="w-full h-full"
+                        src="https://picsum.photos/500/300?random=1"
+                      />
                     </div>
-                    <div className="card bg-white w-[200px] h-[350px] flex-none lg:w-[300px] lg:h-full">
-                      asd
+                    <div className="card w-[200px] h-[350px] flex-none lg:w-[300px] lg:h-full relative">
+                      <div className="absolute bg-black bg-opacity-0 hover:bg-opacity-70 transition w-full h-full top-0 bottom-0 left-0 right-0 mx-auto"></div>
+                      <Image
+                        alt="image-gallery"
+                        width="500"
+                        height="500"
+                        style={{ objectFit: "cover" }}
+                        className="w-full h-full"
+                        src="https://picsum.photos/500/300?random=2"
+                      />
                     </div>
-                    <div className="card bg-white w-[200px] h-[350px] flex-none lg:w-[300px] lg:h-full">
-                      asd
+                    <div className="card w-[200px] h-[350px] flex-none lg:w-[300px] lg:h-full relative">
+                      <div className="absolute bg-black bg-opacity-0 hover:bg-opacity-70 transition w-full h-full top-0 bottom-0 left-0 right-0 mx-auto"></div>
+                      <Image
+                        alt="image-gallery"
+                        width="500"
+                        height="500"
+                        style={{ objectFit: "cover" }}
+                        className="w-full h-full"
+                        src="https://picsum.photos/500/300?random=3"
+                      />
                     </div>
-                    <div className="card bg-white w-[200px] h-[350px] flex-none lg:w-[300px] lg:h-full">
-                      asd
+                    <div className="card w-[200px] h-[350px] flex-none lg:w-[300px] lg:h-full relative">
+                      <div className="absolute bg-black bg-opacity-0 hover:bg-opacity-70 transition w-full h-full top-0 bottom-0 left-0 right-0 mx-auto"></div>
+                      <Image
+                        alt="image-gallery"
+                        width="500"
+                        height="500"
+                        style={{ objectFit: "cover" }}
+                        className="w-full h-full"
+                        src="https://picsum.photos/500/300?random=4"
+                      />
                     </div>
                   </div>
                 </div>
