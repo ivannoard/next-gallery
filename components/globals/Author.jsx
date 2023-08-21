@@ -1,4 +1,5 @@
 import { ProfileImage } from "@/assets/images";
+import { authorIntroduction } from "@/utils/words";
 import Image from "next/image";
 import React from "react";
 
@@ -22,20 +23,11 @@ const Author = () => {
           </p>
         </div>
       </div>
-      <div className="hidden lg:block mt-3 text-white">
-        <p className="text-muted">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores quam
-          ducimus magnam? Commodi corrupti suscipit eveniet ducimus laudantium
-          fugit, aliquid, debitis animi voluptatibus maiores sapiente libero,
-          culpa ipsam cupiditate dolore officiis ipsum rerum illum officia est
-          voluptas placeat deserunt esse. Blanditiis eius doloribus sapiente
-          voluptatem rem. Quod repellendus sed aliquid exercitationem iure
-          dolore aut, inventore rerum, libero, quasi dolor optio fugit tempora
-          laboriosam vero cum nobis corporis sequi nesciunt velit et earum neque
-          voluptatibus sint! Temporibus rem eum assumenda? Dicta ullam veritatis
-          doloribus quam! Eveniet corrupti voluptate ad a sequi vitae at esse,
-          voluptatum temporibus minima mollitia dicta dolorum veniam?
-        </p>
+      <div
+        className="hidden lg:block mt-3 text-white"
+        dangerouslySetInnerHTML={{ __html: authorIntroduction }}
+      >
+        {/* <p className="text-muted">{authorIntroduction}</p> */}
       </div>
     </>
   );
