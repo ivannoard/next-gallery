@@ -25,10 +25,12 @@ module.exports = {
       keyframes: {
         "swoosh-from-top-to-bottom": {
           "0%": {
-            transform: "translate(0,-100%)",
+            transform: "translate(0,-5%)",
+            opacity: 0,
           },
           "100%": {
             transform: "translateY(0,0)",
+            opacity: 100,
           },
         },
         "swoosh-from-bottom-to-top": {

@@ -24,20 +24,20 @@ const Header = () => {
       <nav
         className={`${
           scrollPosition > 50
-            ? "opacity-100 bg-primary shadow-[#100b0a] shadow-sm "
+            ? "opacity-100 bg-primary shadow-primary shadow-sm "
             : "opacity-0"
-        } fixed w-full top-0 transition-all z-[10]`}
+        } fixed w-full top-0 transition-all z-10`}
       >
-        <div className="container bg-primary mx-auto py-5 px-3 lg:px-10 flex justify-between items-center">
+        <div className="container primary mx-auto py-5 px-3 lg:px-10 flex justify-between items-center">
           <Logo />
-          <div className="relative lg:hidden">
+          <div className="lg:hidden">
             <CgMenuRight
               className="text-white cursor-pointer"
               size={24}
               onClick={() => setIsToggleMenu(!isToggleMenu)}
             />
             <div
-              className={`bg-[#2c2c2c] w-full py-5 fixed top-[63px] z-[-10] right-0 left-0 mx-auto transition-all duration-1000 text-center flex flex-col items-center justify-center gap-3  ${
+              className={`bg-[#2c2c2c] w-full py-5 fixed top-[63px] right-0 left-0 mx-auto transition-all duration-1000 text-center flex flex-col items-center justify-center gap-3  ${
                 isToggleMenu ? "animate-swoosh_from_top_to_bottom" : "hidden"
               }`}
             >
