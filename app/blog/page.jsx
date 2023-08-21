@@ -257,7 +257,9 @@ const Blog = () => {
                         <p className="text-muted text-[.8em] lg:text-md content-blog hidden lg:block">
                           {item.content.slice(0, 480)} . . .
                         </p>
-                        <p className="underline text-xs">Read more . . .</p>
+                        <p className="underline text-xs lg:hidden">
+                          Read more . . .
+                        </p>
                       </div>
                     </div>
                   ))}
