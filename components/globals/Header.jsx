@@ -24,7 +24,7 @@ const Header = () => {
       <nav
         className={`${
           scrollPosition > 50
-            ? "opacity-100 bg-[#100b0a] shadow-[#100b0a] shadow-sm "
+            ? "opacity-100 bg-primary shadow-[#100b0a] shadow-sm "
             : "opacity-0"
         } fixed w-full top-0 transition-all z-[10]`}
       >
