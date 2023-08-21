@@ -23,7 +23,7 @@ const Author = () => {
             Author
           </p>
           <p
-            className="text-sm underline cursor-pointer"
+            className="text-sm underline cursor-pointer lg:hidden"
             onClick={() => setIsOpen(!isOpen)}
           >
             More
