@@ -29,7 +29,7 @@ const BlogDetail = ({ params }) => {
       <main>
         <section>
           <div className="container mx-auto lg:px-10 lg:py-12">
-            <div className="w-full h-[550px]">
+            <div className="h-[550px] lg:w-[1200px] mx-auto">
               <Image
                 alt="image-gallery"
                 width="500"

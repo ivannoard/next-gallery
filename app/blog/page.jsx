@@ -237,9 +237,7 @@ const Blog = () => {
                           height="0"
                           style={{ objectFit: "cover" }}
                           className="w-full h-full"
-                          src={`https://picsum.photos/500/300?random=${
-                            (index + 1) * 5
-                          }`}
+                          src={item.image}
                         />
                       </div>
                       <div className="blog-card-content py-3">
