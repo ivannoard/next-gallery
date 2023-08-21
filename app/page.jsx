@@ -187,11 +187,11 @@ export default function Home() {
                 </a>
               </div>
               <div className="grid grid-cols-12 gap-5 px-3 lg:px-40 mt-5">
-                {[1, 2, 3, 4].map((item) => (
+                {blogData.slice(0, 4).map((item) => (
                   <div
-                    key={item}
+                    key={item.id}
                     className="col-span-12 md:col-span-6 lg:col-span-6 bg-white text-black flex flex-col cursor-pointer"
-                    onClick={() => router.push(`/blog/${item}`)}
+                    onClick={() => router.push(`/blog/${item.id}`)}
                   >
                     <div className="relative w-full h-full">
                       <Image
@@ -200,7 +200,7 @@ export default function Home() {
                         height="500"
                         style={{ objectFit: "cover" }}
                         className="w-full h-full mb-6"
-                        src={`https://picsum.photos/500/300?random=${item}`}
+                        src={item.image}
                       />
                       <div className="absolute bg-black bg-opacity-0 hover:bg-opacity-70 transition w-full h-full top-0 bottom-0 left-0 right-0 mx-auto"></div>
                     </div>
@@ -208,16 +208,14 @@ export default function Home() {
                       <div className="blog-title">
                         <p className="text-xs mb-2 text-white">
                           <span className="text-highlight font-semibold">
-                            TRAVEL
+                            {item.tag.toUpperCase()}
                           </span>{" "}
-                          - AUGUST 2023
+                          - {convertDate(item)}
                         </p>
                       </div>
-                      <h3 className="mb-2">Djakarta Stories</h3>
+                      <h3 className="mb-2">{item.title}</h3>
                       <p className="text-muted">
-                        Lorem, ipsum dolor sit amet consectetur adipisicing
-                        elit. Quis neque sit fugiat, soluta repudiandae quasi
-                        esse facilis nostrum animi voluptate?
+                        {item.content.slice(0, 200)} . . .
                       </p>
                     </div>
                   </div>

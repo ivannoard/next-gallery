@@ -266,6 +266,7 @@ const Blog = () => {
                 </div>
               </div>
               {/* author */}
+
               <div className="col-span-12 order-first lg:order-last lg:col-span-4">
                 <div className="bg-secondary w-full relative lg:min-h-[200px]">
                   <div
