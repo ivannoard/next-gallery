@@ -190,10 +190,10 @@ export default function Home() {
                 {blogData.slice(0, 4).map((item) => (
                   <div
                     key={item.id}
-                    className="col-span-12 md:col-span-6 lg:col-span-6 bg-white text-black flex flex-col cursor-pointer"
+                    className="col-span-12 md:col-span-6 lg:col-span-6 text-black flex flex-col cursor-pointer"
                     onClick={() => router.push(`/blog/${item.id}`)}
                   >
-                    <div className="relative w-full h-full">
+                    <div className="relative w-full h-[197px] lg:h-[354px]">
                       <Image
                         alt="image-gallery"
                         width="500"

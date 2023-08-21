@@ -227,10 +227,10 @@ const Blog = () => {
                   {blogs?.map((item, index) => (
                     <div
                       key={item.id}
-                      className="bg-secondary w-full text-white flex lg:items-center gap-4 cursor-pointer pr-4"
+                      className="bg-secondary w-full text-white flex gap-4 cursor-pointer pr-4"
                       onClick={() => router.push(`/blog/${item.id}`)}
                     >
-                      <div className="image w-[100px] lg:w-[250px] h-[120px] lg:h-[180px] flex-none">
+                      <div className="image w-[100px] h-[130px] lg:w-[250px] lg:h-[180px] flex-none">
                         <Image
                           alt="image-gallery"
                           width="0"
