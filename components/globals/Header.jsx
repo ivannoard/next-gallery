@@ -37,10 +37,8 @@ const Header = () => {
               onClick={() => setIsToggleMenu(!isToggleMenu)}
             />
             <div
-              className={`bg-[#2c2c2c] w-full opacity-0 py-5 fixed top-[63px] z-[-10] right-0 left-0 mx-auto transition-all duration-1000 text-center flex flex-col items-center justify-center gap-3  ${
-                isToggleMenu
-                  ? "opacity-100 animate-swoosh_from_top_to_bottom"
-                  : "opacity-0"
+              className={`bg-[#2c2c2c] w-full py-5 fixed top-[63px] z-[-10] right-0 left-0 mx-auto transition-all duration-1000 text-center flex flex-col items-center justify-center gap-3  ${
+                isToggleMenu ? "animate-swoosh_from_top_to_bottom" : "hidden"
               }`}
             >
               {navMenu.map((item) => (

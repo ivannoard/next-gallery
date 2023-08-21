@@ -4,6 +4,7 @@ import Image from "next/image";
 import React from "react";
 
 const Author = () => {
+  const [isOpen, setIsOpen] = React.useState(false);
   return (
     <>
       <div className="border-b-2 border-white pb-3 flex items-center gap-5">
@@ -21,10 +22,16 @@ const Author = () => {
           <p className="text-sm lg:text-base text-highlight font-semibold mt-1">
             Author
           </p>
+          <p
+            className="text-sm underline cursor-pointer"
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            More
+          </p>
         </div>
       </div>
       <div
-        className="hidden lg:block mt-3 text-white"
+        className={`${isOpen ? "block" : "hidden"} lg:block mt-3 text-white`}
         dangerouslySetInnerHTML={{ __html: authorIntroduction }}
       >
         {/* <p className="text-muted">{authorIntroduction}</p> */}
