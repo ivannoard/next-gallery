@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 export default function useAnimatedRouter() {
   const router = useRouter();
   const viewTransitionsStatus = () => {
-    const extendedDocument = document;
+    const extendedDocument = typeof document !== "undefined" && document;
     let status = "Opss, Your browser doesn't support View Transitions API";
     if (extendedDocument?.startViewTransition) {
       status = "Yess, Your browser support View Transitions API";
