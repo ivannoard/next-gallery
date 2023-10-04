@@ -4,6 +4,7 @@ import { Logo } from "../atoms";
 import { navMenu } from "@/models/navmenu";
 import Link from "next/link";
 import { CgMenuRight } from "react-icons/cg";
+import AnimatedLink from "./AnimatedLink";
 
 const Header = () => {
   const [scrollPosition, setScrollPosition] = React.useState(0);
@@ -58,9 +59,9 @@ const Header = () => {
           <div className="hidden lg:flex gap-5 items-center">
             {navMenu.map((item) => (
               <div key={item.id} className="swipe-effect-item">
-                <Link href={item.path} className="text-white">
+                <AnimatedLink href={item.path} className="text-white">
                   {item.name}
-                </Link>
+                </AnimatedLink>
               </div>
             ))}
           </div>

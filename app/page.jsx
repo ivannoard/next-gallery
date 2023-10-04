@@ -7,6 +7,7 @@ import { useRouter } from "next/navigation";
 import { convertDate } from "@/utils/date";
 import { db } from "@/utils/firebase";
 import { capitalizeFirstSentence } from "@/utils/words";
+import useAnimatedRouter from "@/hooks/useAnimatedRouter";
 
 export default function Home() {
   const displayText = ["Djakarta", "Semarang", "Batang", "Yogyakarta"];
@@ -16,6 +17,9 @@ export default function Home() {
   const [isShow, setIsShow] = React.useState(false);
   const [galleryData, setGalleryData] = React.useState(null);
   const [blogData, setBlogData] = React.useState(null);
+  const { viewTransitionsStatus } = useAnimatedRouter();
+
+  console.log(viewTransitionsStatus());
 
   // get Gallery Data
   React.useEffect(() => {
@@ -44,11 +48,11 @@ export default function Home() {
   }, []);
 
   // splash screen
-  React.useEffect(() => {
-    setTimeout(() => {
-      setIsShow(true);
-    }, 2000);
-  }, []);
+  // React.useEffect(() => {
+  //   setTimeout(() => {
+  //     setIsShow(true);
+  //   }, 2000);
+  // }, []);
 
   // animation text jumbotron
   React.useEffect(() => {
@@ -67,9 +71,7 @@ export default function Home() {
 
   return (
     <>
-      {!isShow ? (
-        <SplashScreen />
-      ) : (
+      {
         <main className="pb-10">
           <section className={`h-screen py-24 text-white bg-red-500 relative`}>
             <div className="absolute w-full h-full bg-black bg-opacity-30 top-0 left-0 right-0 bottom-o mx-auto">
@@ -187,7 +189,7 @@ export default function Home() {
                 </a>
               </div>
               <div className="grid grid-cols-12 gap-5 px-3 lg:px-40 mt-5">
-                {blogData.slice(0, 4).map((item) => (
+                {blogData?.slice(0, 4).map((item) => (
                   <div
                     key={item.id}
                     className="col-span-12 md:col-span-6 lg:col-span-6 text-black flex flex-col cursor-pointer"
@@ -200,15 +202,15 @@ export default function Home() {
                         height="500"
                         style={{ objectFit: "cover" }}
                         className="w-full h-full mb-6"
-                        src={item.image}
+                        src={item.image[0]}
                       />
                       <div className="absolute bg-black bg-opacity-0 hover:bg-opacity-70 transition w-full h-full top-0 bottom-0 left-0 right-0 mx-auto"></div>
                     </div>
-                    <div className=" p-5 bg-secondary text-white">
+                    <div className=" p-5 bg-secondary text-white min-h-[172.02px] h-[100%]">
                       <div className="blog-title">
                         <p className="text-xs mb-2 text-white">
                           <span className="text-highlight font-semibold">
-                            {item.tag.toUpperCase()}
+                            {item.tag[0].toUpperCase()}
                           </span>{" "}
                           - {convertDate(item)}
                         </p>
@@ -225,7 +227,7 @@ export default function Home() {
           </section>
           {/* <div className="container bg-red-500">asd</div> */}
         </main>
-      )}
+      }
     </>
   );
 }

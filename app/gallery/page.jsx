@@ -2,9 +2,19 @@
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import React from "react";
-
+import Slider from "react-slick";
+import "slick-carousel/slick/slick-theme.css";
+import "slick-carousel/slick/slick.css";
 const Gallery = () => {
   const router = useRouter();
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 3,
+    autoplay: true,
+  };
   return (
     <>
       <main>
@@ -24,51 +34,25 @@ const Gallery = () => {
                   </div>
                 </div>
                 <div className="col-span-12 lg:col-span-6 relative lg:overflow-x-scroll hide-scrollbar">
-                  <div className="mt-5 lg:mt-0 lg:px-0 lg:py-0 absolute z-[2] w-full top-0 lg:h-full flex gap-5 overflow-x-scroll lg:overflow-x-visible">
-                    <div className="card w-[200px] h-[350px] flex-none lg:w-[300px] lg:h-full relative">
-                      <div className="absolute bg-black bg-opacity-0 hover:bg-opacity-70 transition w-full h-full top-0 bottom-0 left-0 right-0 mx-auto"></div>
-                      <Image
-                        alt="image-gallery"
-                        width="500"
-                        height="500"
-                        style={{ objectFit: "cover" }}
-                        className="w-full h-full"
-                        src="https://picsum.photos/500/300?random=1"
-                      />
-                    </div>
-                    <div className="card w-[200px] h-[350px] flex-none lg:w-[300px] lg:h-full relative">
-                      <div className="absolute bg-black bg-opacity-0 hover:bg-opacity-70 transition w-full h-full top-0 bottom-0 left-0 right-0 mx-auto"></div>
-                      <Image
-                        alt="image-gallery"
-                        width="500"
-                        height="500"
-                        style={{ objectFit: "cover" }}
-                        className="w-full h-full"
-                        src="https://picsum.photos/500/300?random=2"
-                      />
-                    </div>
-                    <div className="card w-[200px] h-[350px] flex-none lg:w-[300px] lg:h-full relative">
-                      <div className="absolute bg-black bg-opacity-0 hover:bg-opacity-70 transition w-full h-full top-0 bottom-0 left-0 right-0 mx-auto"></div>
-                      <Image
-                        alt="image-gallery"
-                        width="500"
-                        height="500"
-                        style={{ objectFit: "cover" }}
-                        className="w-full h-full"
-                        src="https://picsum.photos/500/300?random=3"
-                      />
-                    </div>
-                    <div className="card w-[200px] h-[350px] flex-none lg:w-[300px] lg:h-full relative">
-                      <div className="absolute bg-black bg-opacity-0 hover:bg-opacity-70 transition w-full h-full top-0 bottom-0 left-0 right-0 mx-auto"></div>
-                      <Image
-                        alt="image-gallery"
-                        width="500"
-                        height="500"
-                        style={{ objectFit: "cover" }}
-                        className="w-full h-full"
-                        src="https://picsum.photos/500/300?random=4"
-                      />
-                    </div>
+                  <div className="mt-5 lg:mt-0 lg:px-0 lg:py-0 absolute z-[2] w-full top-0 lg:h-full gallery-header">
+                    <Slider {...settings}>
+                      {[1, 2, 3, 4, 5].map((item) => (
+                        <div
+                          key={item}
+                          className="card relative w-[300px] h-[500px] px-2"
+                        >
+                          {/* <div className="absolute bg-black bg-opacity-0 hover:bg-opacity-70 transition w-full h-full top-0 bottom-0 left-0 right-0 mx-auto mx-2"></div> */}
+                          <Image
+                            alt="image-gallery"
+                            width="0"
+                            height="0"
+                            style={{ objectFit: "cover" }}
+                            className="w-full h-full"
+                            src={`https://picsum.photos/500/300?random=${item}`}
+                          />
+                        </div>
+                      ))}
+                    </Slider>
                   </div>
                 </div>
               </div>

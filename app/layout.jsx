@@ -2,6 +2,7 @@ import React from "react";
 import { Header, SplashScreen } from "@/components/globals";
 import "./globals.css";
 import { Inter } from "next/font/google";
+import useAnimatedRouter from "@/hooks/useAnimatedRouter";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -11,11 +12,13 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  // const { viewTransitionsStatus } = useAnimatedRouter();
   return (
     <>
       <html lang="en">
         <body className={inter.className}>
           <Header />
+          {/* <span>{viewTransitionsStatus}</span> */}
           {children}
         </body>
       </html>
