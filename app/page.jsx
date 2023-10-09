@@ -12,7 +12,6 @@ export default function Home() {
   const router = useRouter();
   const [index, setIndex] = React.useState(0);
   const [activeDisplay, setActiveDisplay] = React.useState();
-  const [isShow, setIsShow] = React.useState(false);
   const { dataGallery: galleryData } = useGallery();
   const { dataBlog: blogData } = useBlog();
 

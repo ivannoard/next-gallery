@@ -1,5 +1,7 @@
 export function capitalizeFirstSentence(text) {
-  return text.charAt(0).toUpperCase() + text.slice(1);
+  if (text !== undefined) {
+    return text.charAt(0).toUpperCase() + text.slice(1);
+  }
 }
 
 export const authorIntroduction =

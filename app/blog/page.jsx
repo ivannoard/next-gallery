@@ -3,6 +3,7 @@ import { Author } from "@/components/globals";
 import AnimatedLink from "@/components/globals/AnimatedLink";
 import useBlog from "@/hooks/useBlog";
 import { convertDate } from "@/utils/date";
+import { capitalizeFirstSentence } from "@/utils/words";
 import Image from "next/image";
 import React from "react";
 
@@ -39,169 +40,179 @@ const Blog = () => {
             <div className="grid grid-cols-12 gap-5">
               <div className="col-span-12 md:col-span-6 lg:col-span-7">
                 {/* blog left */}
-                <AnimatedLink href={`/blog/${blogs[0]?.id}`}>
-                  <div className="mb-5 bg-secondary cursor-pointer">
-                    <div className="w-full h-[400px]">
-                      <div className="relative w-full h-full">
-                        <Image
-                          priority
-                          alt="image-gallery"
-                          width="500"
-                          height="500"
-                          style={{ objectFit: "cover" }}
-                          className="w-full h-full mb-6"
-                          src={blogs[0]?.image[0]}
-                        />
-                        <div className="absolute bg-black bg-opacity-0 hover:bg-opacity-70 transition w-full h-full top-0 bottom-0 left-0 right-0 mx-auto"></div>
+                {blogs.length > 0 && Object.keys(blogs[0]).length > 0 && (
+                  <AnimatedLink href={`/blog/${blogs[0]?.id}`}>
+                    <div className="mb-5 bg-secondary cursor-pointer">
+                      <div className="w-full h-[400px]">
+                        <div className="relative w-full h-full">
+                          <Image
+                            priority
+                            alt="image-gallery"
+                            width="500"
+                            height="500"
+                            style={{ objectFit: "cover" }}
+                            className="w-full h-full mb-6"
+                            src={blogs[0]?.image[0]}
+                          />
+                          <div className="absolute bg-black bg-opacity-0 hover:bg-opacity-70 transition w-full h-full top-0 bottom-0 left-0 right-0 mx-auto"></div>
+                        </div>
                       </div>
-                    </div>
-                    <div className="px-5 py-3">
-                      <div className="blog-title pt-3">
-                        <p className="text-xs mb-2 text-muted">
-                          <span className="text-highlight font-semibold">
-                            {blogs[0]?.tag[0]}
-                          </span>
-                          - {convertDate(blogs[0])}
+                      <div className="px-5 py-3">
+                        <div className="blog-title pt-3">
+                          <p className="text-xs mb-2 text-muted">
+                            <span className="text-highlight font-semibold">
+                              {capitalizeFirstSentence(blogs[0]?.tag[0])}
+                            </span>
+                            - {convertDate(blogs[0])}
+                          </p>
+                          <h2>{blogs[0]?.title}</h2>
+                        </div>
+                        <p className="text-muted">
+                          {blogs[0]?.content.slice(0, 350)} . . .
                         </p>
-                        <h2>{blogs[0]?.title}</h2>
-                      </div>
-                      <p className="text-muted">
-                        {blogs[0]?.content.slice(0, 350)} . . .
-                      </p>
-                    </div>
-                  </div>
-                </AnimatedLink>
-                <AnimatedLink href={`/blog/${blogs[1]?.id}`}>
-                  <div className="bg-secondary cursor-pointer">
-                    <div className="w-full h-[400px]">
-                      <div className="relative w-full h-full">
-                        <Image
-                          priority
-                          alt="image-gallery"
-                          width="500"
-                          height="500"
-                          style={{ objectFit: "cover" }}
-                          className="w-full h-full mb-6"
-                          src={blogs[1]?.image[0]}
-                        />
-                        <div className="absolute bg-black bg-opacity-0 hover:bg-opacity-70 transition w-full h-full top-0 bottom-0 left-0 right-0 mx-auto"></div>
                       </div>
                     </div>
-                    <div className="px-5 py-3">
-                      <div className="blog-title pt-3">
-                        <p className="text-xs mb-2 text-muted">
-                          <span className="text-highlight font-semibold">
-                            {blogs[1]?.tag[0]}
-                          </span>
-                          - {convertDate(blogs[1])}
+                  </AnimatedLink>
+                )}
+                {blogs.length > 0 && Object.keys(blogs[1]).length > 0 && (
+                  <AnimatedLink href={`/blog/${blogs[1]?.id}`}>
+                    <div className="bg-secondary cursor-pointer">
+                      <div className="w-full h-[400px]">
+                        <div className="relative w-full h-full">
+                          <Image
+                            priority
+                            alt="image-gallery"
+                            width="500"
+                            height="500"
+                            style={{ objectFit: "cover" }}
+                            className="w-full h-full mb-6"
+                            src={blogs[1]?.image[0]}
+                          />
+                          <div className="absolute bg-black bg-opacity-0 hover:bg-opacity-70 transition w-full h-full top-0 bottom-0 left-0 right-0 mx-auto"></div>
+                        </div>
+                      </div>
+                      <div className="px-5 py-3">
+                        <div className="blog-title pt-3">
+                          <p className="text-xs mb-2 text-muted">
+                            <span className="text-highlight font-semibold">
+                              {capitalizeFirstSentence(blogs[1]?.tag[0])}
+                            </span>
+                            - {convertDate(blogs[1])}
+                          </p>
+                          <h2>{blogs[1]?.title}</h2>
+                        </div>
+                        <p className="text-muted">
+                          {blogs[1]?.content.slice(0, 350)} . . .
                         </p>
-                        <h2>{blogs[1]?.title}</h2>
                       </div>
-                      <p className="text-muted">
-                        {blogs[1]?.content.slice(0, 350)} . . .
-                      </p>
                     </div>
-                  </div>
-                </AnimatedLink>
+                  </AnimatedLink>
+                )}
               </div>
               {/* blog right */}
               <div className="col-span-12 md:col-span-6 lg:col-span-5 flex flex-col gap-5">
-                <AnimatedLink href={`/blog/${blogs[2]?.id}`}>
-                  <div className="bg-secondary cursor-pointer">
-                    <div className="w-full h-[200px]">
-                      <div className="relative w-full h-full">
-                        <Image
-                          priority
-                          alt="image-gallery"
-                          width="500"
-                          height="500"
-                          style={{ objectFit: "cover" }}
-                          className="w-full h-full mb-6"
-                          src={blogs[2]?.image[0]}
-                        />
-                        <div className="absolute bg-black bg-opacity-0 hover:bg-opacity-70 transition w-full h-full top-0 bottom-0 left-0 right-0 mx-auto"></div>
+                {blogs.length > 0 && Object.keys(blogs[2]).length > 0 && (
+                  <AnimatedLink href={`/blog/${blogs[2]?.id}`}>
+                    <div className="bg-secondary cursor-pointer">
+                      <div className="w-full h-[200px]">
+                        <div className="relative w-full h-full">
+                          <Image
+                            priority
+                            alt="image-gallery"
+                            width="500"
+                            height="500"
+                            style={{ objectFit: "cover" }}
+                            className="w-full h-full mb-6"
+                            src={blogs[2]?.image[0]}
+                          />
+                          <div className="absolute bg-black bg-opacity-0 hover:bg-opacity-70 transition w-full h-full top-0 bottom-0 left-0 right-0 mx-auto"></div>
+                        </div>
                       </div>
-                    </div>
-                    <div className="px-5 py-3">
-                      <div className="blog-title pt-3">
-                        <p className="text-xs mb-2 text-muted">
-                          <span className="text-highlight font-semibold">
-                            {blogs[2]?.tag[0]}
-                          </span>
-                          - {convertDate(blogs[2])}
+                      <div className="px-5 py-3">
+                        <div className="blog-title pt-3">
+                          <p className="text-xs mb-2 text-muted">
+                            <span className="text-highlight font-semibold">
+                              {capitalizeFirstSentence(blogs[2]?.tag[0])}
+                            </span>
+                            - {convertDate(blogs[2])}
+                          </p>
+                          <h2>{blogs[2]?.title}</h2>
+                        </div>
+                        <p className="text-muted">
+                          {blogs[2]?.content.slice(0, 250)} . . .
                         </p>
-                        <h2>{blogs[2]?.title}</h2>
-                      </div>
-                      <p className="text-muted">
-                        {blogs[2]?.content.slice(0, 250)} . . .
-                      </p>
-                    </div>
-                  </div>
-                </AnimatedLink>
-                <AnimatedLink href={`/blog/${blogs[3]?.id}`}>
-                  <div className="bg-secondary cursor-pointer">
-                    <div className="w-full h-[200px]">
-                      <div className="relative w-full h-full">
-                        <Image
-                          priority
-                          alt="image-gallery"
-                          width="500"
-                          height="500"
-                          style={{ objectFit: "cover" }}
-                          className="w-full h-full mb-6"
-                          src={blogs[3]?.image[0]}
-                        />
-                        <div className="absolute bg-black bg-opacity-0 hover:bg-opacity-70 transition w-full h-full top-0 bottom-0 left-0 right-0 mx-auto"></div>
                       </div>
                     </div>
-                    <div className="px-5 py-3">
-                      <div className="blog-title pt-3">
-                        <p className="text-xs mb-2 text-muted">
-                          <span className="text-highlight font-semibold">
-                            {blogs[3]?.tag[0]}
-                          </span>
-                          - {convertDate(blogs[3])}
+                  </AnimatedLink>
+                )}
+                {blogs.length > 0 && Object.keys(blogs[3]).length > 0 && (
+                  <AnimatedLink href={`/blog/${blogs[3]?.id}`}>
+                    <div className="bg-secondary cursor-pointer">
+                      <div className="w-full h-[200px]">
+                        <div className="relative w-full h-full">
+                          <Image
+                            priority
+                            alt="image-gallery"
+                            width="500"
+                            height="500"
+                            style={{ objectFit: "cover" }}
+                            className="w-full h-full mb-6"
+                            src={blogs[3]?.image[0]}
+                          />
+                          <div className="absolute bg-black bg-opacity-0 hover:bg-opacity-70 transition w-full h-full top-0 bottom-0 left-0 right-0 mx-auto"></div>
+                        </div>
+                      </div>
+                      <div className="px-5 py-3">
+                        <div className="blog-title pt-3">
+                          <p className="text-xs mb-2 text-muted">
+                            <span className="text-highlight font-semibold">
+                              {capitalizeFirstSentence(blogs[3]?.tag[0])}
+                            </span>
+                            - {convertDate(blogs[3])}
+                          </p>
+                          <h2>{blogs[3]?.title}</h2>
+                        </div>
+                        <p className="text-muted">
+                          {blogs[1]?.content.slice(0, 250)} . . .
                         </p>
-                        <h2>{blogs[3]?.title}</h2>
-                      </div>
-                      <p className="text-muted">
-                        {blogs[1]?.content.slice(0, 250)} . . .
-                      </p>
-                    </div>
-                  </div>
-                </AnimatedLink>
-                <AnimatedLink href={`/blog/${blogs[4]?.id}`}>
-                  <div className="bg-secondary cursor-pointer">
-                    <div className="w-full h-[200px]">
-                      <div className="relative w-full h-full">
-                        <Image
-                          priority
-                          alt="image-gallery"
-                          width="500"
-                          height="500"
-                          style={{ objectFit: "cover" }}
-                          className="w-full h-full mb-6"
-                          src={blogs[4]?.image[0]}
-                        />
-                        <div className="absolute bg-black bg-opacity-0 hover:bg-opacity-70 transition w-full h-full top-0 bottom-0 left-0 right-0 mx-auto"></div>
                       </div>
                     </div>
-                    <div className="px-5 py-3">
-                      <div className="blog-title pt-3">
-                        <p className="text-xs mb-2 text-muted">
-                          <span className="text-highlight font-semibold">
-                            {blogs[4]?.tag[0]}
-                          </span>
-                          - {convertDate(blogs[4])}
+                  </AnimatedLink>
+                )}
+                {blogs.length > 0 && Object.keys(blogs[4]).length > 0 && (
+                  <AnimatedLink href={`/blog/${blogs[4]?.id}`}>
+                    <div className="bg-secondary cursor-pointer">
+                      <div className="w-full h-[200px]">
+                        <div className="relative w-full h-full">
+                          <Image
+                            priority
+                            alt="image-gallery"
+                            width="500"
+                            height="500"
+                            style={{ objectFit: "cover" }}
+                            className="w-full h-full mb-6"
+                            src={blogs[4]?.image[0]}
+                          />
+                          <div className="absolute bg-black bg-opacity-0 hover:bg-opacity-70 transition w-full h-full top-0 bottom-0 left-0 right-0 mx-auto"></div>
+                        </div>
+                      </div>
+                      <div className="px-5 py-3">
+                        <div className="blog-title pt-3">
+                          <p className="text-xs mb-2 text-muted">
+                            <span className="text-highlight font-semibold">
+                              {capitalizeFirstSentence(blogs[4]?.tag[0])}
+                            </span>
+                            - {convertDate(blogs[4])}
+                          </p>
+                          <h2>{blogs[4]?.title}</h2>
+                        </div>
+                        <p className="text-muted">
+                          {blogs[4]?.content.slice(0, 250)} . . .
                         </p>
-                        <h2>{blogs[4]?.title}</h2>
                       </div>
-                      <p className="text-muted">
-                        {blogs[4]?.content.slice(0, 250)} . . .
-                      </p>
                     </div>
-                  </div>
-                </AnimatedLink>
+                  </AnimatedLink>
+                )}
               </div>
             </div>
             <div className="grid grid-cols-12 gap-5 mt-10">
@@ -226,7 +237,7 @@ const Blog = () => {
                           <div className="blog-title mb-1">
                             <p className="text-xs text-muted">
                               <span className="text-highlight font-semibold">
-                                {item.tag[0]}
+                                {capitalizeFirstSentence(item.tag[0])}
                               </span>
                               {/* <span className="text-highlight font-semibold ">
                               {item.tag.map((item) => item.toUpperCase())}

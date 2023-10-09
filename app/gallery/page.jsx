@@ -15,6 +15,14 @@ const Gallery = () => {
     slidesToScroll: 3,
     autoplay: true,
   };
+  const settingsSmall = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+  };
   return (
     <>
       <main>
@@ -35,24 +43,46 @@ const Gallery = () => {
                 </div>
                 <div className="col-span-12 lg:col-span-6 relative lg:overflow-x-scroll hide-scrollbar">
                   <div className="mt-5 lg:mt-0 lg:px-0 lg:py-0 absolute z-[2] w-full top-0 lg:h-full gallery-header">
-                    <Slider {...settings}>
-                      {[1, 2, 3, 4, 5].map((item) => (
-                        <div
-                          key={item}
-                          className="card relative w-[300px] h-[500px] px-2"
-                        >
-                          {/* <div className="absolute bg-black bg-opacity-0 hover:bg-opacity-70 transition w-full h-full top-0 bottom-0 left-0 right-0 mx-auto mx-2"></div> */}
-                          <Image
-                            alt="image-gallery"
-                            width="0"
-                            height="0"
-                            style={{ objectFit: "cover" }}
-                            className="w-full h-full"
-                            src={`https://picsum.photos/500/300?random=${item}`}
-                          />
-                        </div>
-                      ))}
-                    </Slider>
+                    <div className="block lg:hidden">
+                      <Slider {...settingsSmall}>
+                        {[1, 2, 3, 4, 5].map((item) => (
+                          <div
+                            key={item}
+                            className="card relative w-[300px] h-[400px] px-2"
+                          >
+                            {/* <div className="absolute bg-black bg-opacity-0 hover:bg-opacity-70 transition w-full h-full top-0 bottom-0 left-0 right-0 mx-auto mx-2"></div> */}
+                            <Image
+                              alt="image-gallery"
+                              width="0"
+                              height="0"
+                              style={{ objectFit: "cover" }}
+                              className="w-full h-full"
+                              src={`https://picsum.photos/500/300?random=${item}`}
+                            />
+                          </div>
+                        ))}
+                      </Slider>
+                    </div>
+                    <div className="hidden lg:block">
+                      <Slider {...settings}>
+                        {[1, 2, 3, 4, 5].map((item) => (
+                          <div
+                            key={item}
+                            className="card relative w-[300px] h-[400px] px-2"
+                          >
+                            {/* <div className="absolute bg-black bg-opacity-0 hover:bg-opacity-70 transition w-full h-full top-0 bottom-0 left-0 right-0 mx-auto mx-2"></div> */}
+                            <Image
+                              alt="image-gallery"
+                              width="0"
+                              height="0"
+                              style={{ objectFit: "cover" }}
+                              className="w-full h-full"
+                              src={`https://picsum.photos/500/300?random=${item}`}
+                            />
+                          </div>
+                        ))}
+                      </Slider>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -60,7 +90,7 @@ const Gallery = () => {
           </div>
         </section>
         {/* bottom gallery */}
-        <section className="text-white mt-24 lg:mt-16 px-3 lg:px-10">
+        <section className="text-white mt-36 lg:mt-16 px-3 lg:px-10">
           <div className="container mx-auto">
             <h4 className="text-center tracking-[.5rem]">
               <span className="hidden lg:inline">- </span>Unveiling
