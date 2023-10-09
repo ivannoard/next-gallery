@@ -1,8 +1,6 @@
-import React from "react";
-import { Header, SplashScreen } from "@/components/globals";
-import "./globals.css";
+import { Header } from "@/components/globals";
 import { Inter } from "next/font/google";
-import useAnimatedRouter from "@/hooks/useAnimatedRouter";
+import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 

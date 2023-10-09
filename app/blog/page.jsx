@@ -1,36 +1,19 @@
 "use client";
 import { Author } from "@/components/globals";
 import AnimatedLink from "@/components/globals/AnimatedLink";
+import useBlog from "@/hooks/useBlog";
 import { convertDate } from "@/utils/date";
-import { db } from "@/utils/firebase";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
 import React from "react";
 
 const Blog = () => {
   const [scrollPosition, setScrollPosition] = React.useState(0);
-  const router = useRouter();
-
-  const [blogs, setBlogs] = React.useState([]);
+  const { dataBlog: blogs } = useBlog();
 
   const handleScroll = () => {
     const position = window.pageYOffset;
     setScrollPosition(position);
   };
-
-  React.useEffect(() => {
-    const unsubscribe = db.collection("Blogs").onSnapshot((snapshot) => {
-      const blogsData = snapshot.docs.map((doc) => ({
-        id: doc.id,
-        ...doc.data(),
-      }));
-      setBlogs(blogsData);
-    });
-
-    return () => unsubscribe();
-  }, []);
-
-  console.log(blogs);
 
   React.useEffect(() => {
     window.addEventListener("scroll", handleScroll, { passive: true });
@@ -57,13 +40,11 @@ const Blog = () => {
               <div className="col-span-12 md:col-span-6 lg:col-span-7">
                 {/* blog left */}
                 <AnimatedLink href={`/blog/${blogs[0]?.id}`}>
-                  <div
-                    className="mb-5 bg-secondary cursor-pointer"
-                    // onClick={() => router.push(`/blog/${blogs[0]?.id}`)}
-                  >
+                  <div className="mb-5 bg-secondary cursor-pointer">
                     <div className="w-full h-[400px]">
                       <div className="relative w-full h-full">
                         <Image
+                          priority
                           alt="image-gallery"
                           width="500"
                           height="500"
@@ -91,13 +72,11 @@ const Blog = () => {
                   </div>
                 </AnimatedLink>
                 <AnimatedLink href={`/blog/${blogs[1]?.id}`}>
-                  <div
-                    className="bg-secondary cursor-pointer"
-                    // onClick={() => router.push()}
-                  >
+                  <div className="bg-secondary cursor-pointer">
                     <div className="w-full h-[400px]">
                       <div className="relative w-full h-full">
                         <Image
+                          priority
                           alt="image-gallery"
                           width="500"
                           height="500"
@@ -128,13 +107,11 @@ const Blog = () => {
               {/* blog right */}
               <div className="col-span-12 md:col-span-6 lg:col-span-5 flex flex-col gap-5">
                 <AnimatedLink href={`/blog/${blogs[2]?.id}`}>
-                  <div
-                    className="bg-secondary cursor-pointer"
-                    // onClick={() => router.push()}
-                  >
+                  <div className="bg-secondary cursor-pointer">
                     <div className="w-full h-[200px]">
                       <div className="relative w-full h-full">
                         <Image
+                          priority
                           alt="image-gallery"
                           width="500"
                           height="500"
@@ -162,13 +139,11 @@ const Blog = () => {
                   </div>
                 </AnimatedLink>
                 <AnimatedLink href={`/blog/${blogs[3]?.id}`}>
-                  <div
-                    className="bg-secondary cursor-pointer"
-                    // onClick={() => router.push()}
-                  >
+                  <div className="bg-secondary cursor-pointer">
                     <div className="w-full h-[200px]">
                       <div className="relative w-full h-full">
                         <Image
+                          priority
                           alt="image-gallery"
                           width="500"
                           height="500"
@@ -196,13 +171,11 @@ const Blog = () => {
                   </div>
                 </AnimatedLink>
                 <AnimatedLink href={`/blog/${blogs[4]?.id}`}>
-                  <div
-                    className="bg-secondary cursor-pointer"
-                    // onClick={() => router.push()}
-                  >
+                  <div className="bg-secondary cursor-pointer">
                     <div className="w-full h-[200px]">
                       <div className="relative w-full h-full">
                         <Image
+                          priority
                           alt="image-gallery"
                           width="500"
                           height="500"
@@ -237,12 +210,10 @@ const Blog = () => {
                 <div className="max-h-[680px] flex flex-col gap-5 overflow-y-scroll hide-scrollbar">
                   {blogs?.map((item, index) => (
                     <AnimatedLink key={item.id} href={`/blog/${item.id}`}>
-                      <div
-                        className="bg-secondary w-full text-white flex gap-4 cursor-pointer pr-4"
-                        // onClick={() => router.push(``)}
-                      >
+                      <div className="bg-secondary w-full text-white flex gap-4 cursor-pointer pr-4">
                         <div className="image w-[100px] h-[130px] lg:w-[250px] lg:h-[200px] flex-none">
                           <Image
+                            priority
                             alt="image-gallery"
                             width="0"
                             height="0"

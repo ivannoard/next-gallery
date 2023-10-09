@@ -1,13 +1,11 @@
 "use client";
-import React from "react";
-import { ProfileImage } from "@/assets/images";
-import Image from "next/image";
-import { SplashScreen } from "@/components/globals";
-import { useRouter } from "next/navigation";
+import useBlog from "@/hooks/useBlog";
+import useGallery from "@/hooks/useGallery";
 import { convertDate } from "@/utils/date";
-import { db } from "@/utils/firebase";
 import { capitalizeFirstSentence } from "@/utils/words";
-import useAnimatedRouter from "@/hooks/useAnimatedRouter";
+import Image from "next/image";
+import { useRouter } from "next/navigation";
+import React from "react";
 
 export default function Home() {
   const displayText = ["Djakarta", "Semarang", "Batang", "Yogyakarta"];
@@ -15,44 +13,8 @@ export default function Home() {
   const [index, setIndex] = React.useState(0);
   const [activeDisplay, setActiveDisplay] = React.useState();
   const [isShow, setIsShow] = React.useState(false);
-  const [galleryData, setGalleryData] = React.useState(null);
-  const [blogData, setBlogData] = React.useState(null);
-  const { viewTransitionsStatus } = useAnimatedRouter();
-
-  console.log(viewTransitionsStatus());
-
-  // get Gallery Data
-  React.useEffect(() => {
-    const unsubscribe = db.collection("Gallery").onSnapshot((snapshot) => {
-      const blogsData = snapshot.docs.map((doc) => ({
-        id: doc.id,
-        ...doc.data(),
-      }));
-      setGalleryData(blogsData);
-    });
-
-    return () => unsubscribe();
-  }, []);
-
-  // get Blog Data
-  React.useEffect(() => {
-    const unsubscribe = db.collection("Blogs").onSnapshot((snapshot) => {
-      const blogsData = snapshot.docs.map((doc) => ({
-        id: doc.id,
-        ...doc.data(),
-      }));
-      setBlogData(blogsData);
-    });
-
-    return () => unsubscribe();
-  }, []);
-
-  // splash screen
-  // React.useEffect(() => {
-  //   setTimeout(() => {
-  //     setIsShow(true);
-  //   }, 2000);
-  // }, []);
+  const { dataGallery: galleryData } = useGallery();
+  const { dataBlog: blogData } = useBlog();
 
   // animation text jumbotron
   React.useEffect(() => {
